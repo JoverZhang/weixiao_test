@@ -1,1 +1,31 @@
 /* pages/assignments/assignments.wxss */
+@import "../../components/weui/dist/style/weui.wxss";
+
+/* .weui-cell{
+    border-bottom: 2rpx solid grey;
+} */
+/* .weui_textarea{
+    border-top: none;
+    margin-top: 0;
+} */
+
+.container{
+    width: 100vw;
+    height: 100vh;
+}
+
+.weui-textarea{
+    position: relative;
+    margin: 30rpx 5vw;
+    top: 0;
+    width: 90vw;
+    height: 250rpx;
+    display: block;
+    /* background-color: red; */
+}
+
+.container .submit_button{
+    width: 90vw;
+    margin: auto;
+    background-color: #529eea;
+}

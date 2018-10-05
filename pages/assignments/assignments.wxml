@@ -1,2 +1,9 @@
-<!--pages/assignments/assignments.wxml-->
-<text>pages/assignments/assignments.wxml</text>
+<!-- <view class="weui-cells weui-cells_form weui_textarea"> -->
+    <i-toast id="pop_toast" type="ghost" bind:click="handleSuccess">成功</i-toast>
+    <i-message id="pop_message" type="ghost" bind:click="handleError">错误提醒</i-message>
+    <form class="container" bindsubmit="formSubmit" bindreset="formReset">
+        <textarea class="weui-textarea" name="content" placeholder="请输入作业内容" maxlength="-1"></textarea>
+
+        <button class="submit_button" form-type="submit">提交</button>
+    </form>
+<!-- </view> -->

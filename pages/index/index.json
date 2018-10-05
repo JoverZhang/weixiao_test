@@ -10,6 +10,7 @@
   "component": true,
   "usingComponents": {
     "i-tab-bar": "../../components/iview/dist/tab-bar/index",
-    "i-tab-bar-item": "../../components/iview/dist/tab-bar-item/index"
+    "i-tab-bar-item": "../../components/iview/dist/tab-bar-item/index",
+    "i-swipeout": "../../components/iview/dist/swipeout/index"
   }
 }

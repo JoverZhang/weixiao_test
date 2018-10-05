@@ -7,7 +7,6 @@
     <view class="o3 {{_this==3?'inthis':''}}" data-num="3" bindtap="changepages">通知</view>
   </view>
 </view>
-
 <!-- 作业 -->
 <view class="tcontent work" hidden="{{_this==1?'':'1'}}">
   <view class="option">
@@ -50,16 +49,35 @@
   </view>
   <view class="nreceive" hidden="{{_nthis==1?'':'1'}}" hover-class="none" hover-stop-propagation="false">
     <scroll-view class="nre_tipwindow notice_tipwindow" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
+
       <view class="nre_tips" hover-class="none" hover-stop-propagation="false">
         <view class="nre_tips_logo" hover-class="none" hover-stop-propagation="false"></view>
         <view class="nre_tips_info" hover-class="none" hover-stop-propagation="false">
-          <view class="nre_tips_name" hover-class="none" hover-stop-propagation="false">三年级二班任务</view>
+          <view class="nre_tips_name" hover-class="none" hover-stop-propagation="false">
+            三年级二班任务
+          </view>
           <view class="nre_tips_time" hover-class="none" hover-stop-propagation="false">09-16</view>
-          <view class="nre_tips_summary" hover-class="none" hover-stop-propagation="false">有人提交新任务</view>
+          <view class="nre_tips_summary" hover-class="none" hover-stop-propagation="false">
+            有人提交新任务
+          </view>
         </view>
       </view>
 
-      <view class="nre_tips" hover-class="none" hover-stop-propagation="false">
+<!--  -->
+      <!-- <i-swipeout i-class="nre_tips i-swipeout-demo-item" actions="{{actions}}">
+        <view class="nre_tips_info" slot="content">
+      //    <view class="i-swipeout-image">
+            <image class="nre_tips_logo" mode="widthFix" src="../../images/myapp/m-icon.png"/>
+      //    </view>
+          <view class="i-swipeout-des">
+            <view class="i-swipeout-des-h2">第七个小矮人</view>
+            <view class="i-swipeout-des-detail">乐观善良的7个小矮人原本过着简单快乐的生活，不料诅咒公主的巫婆利用小矮人进入.</view>
+          </view>
+        </view>
+      </i-swipeout> -->
+<!--  -->
+
+      <!-- <view class="nre_tips" hover-class="none" hover-stop-propagation="false">
         <view class="nre_tips_logo" hover-class="none" hover-stop-propagation="false"></view>
         <view class="nre_tips_info" hover-class="none" hover-stop-propagation="false">
           <view class="nre_tips_name" hover-class="none" hover-stop-propagation="false">三年级二班调查</view>
@@ -138,12 +156,12 @@
           <view class="nre_tips_time" hover-class="none" hover-stop-propagation="false">09-16</view>
           <view class="nre_tips_summary" hover-class="none" hover-stop-propagation="false">调查结果有新变动</view>
         </view>
-      </view>
+      </view> -->
     </scroll-view>
   </view>
   <view class="nsend" hidden="{{_nthis==2?'':'1'}}" hover-class="none" hover-stop-propagation="false">
     <scroll-view class="nse_tipwindow notice_tipwindow" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
-    发布通知
+      发布通知
     </scroll-view>
   </view>
 </view>
@@ -154,13 +172,12 @@
   <view class="f_button fo4" hover-class="none" hover-stop-propagation="false"></view>
   <view class="f_button fo5" hover-class="none" hover-stop-propagation="false"></view>
 </view> -->
-
 <i-tab-bar class="footer" current="{{ current }}" color="#529eea" bindchange="handleChange">
-    <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
-    <view class="f_plane" hover-class="none" hover-stop-propagation="false" bindtap="to_assignments" bindtouchstart="plane_miss_begin" bindtouchend="plane_miss_end">
-      <image class="f_plane_icon" src="../../images/myapp/m-home{{_plane_miss}}.png"/>
-    </view>
-    <!-- <i-tab-bar-item key="group" icon="group" current-icon="group_fill" title="朋友"></i-tab-bar-item> -->
-    <!-- <i-tab-bar-item key="remind" icon="browse" current-icon="browse_fill" title="发现"></i-tab-bar-item> -->
-    <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" title="我的"></i-tab-bar-item>
+  <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
+  <view class="f_plane" hover-class="none" hover-stop-propagation="false" bindtap="to_assignments" bindtouchstart="plane_miss_begin" bindtouchend="plane_miss_end">
+    <image class="f_plane_icon" src="../../images/myapp/m-home{{_plane_miss}}.png" />
+  </view>
+  <!-- <i-tab-bar-item key="group" icon="group" current-icon="group_fill" title="朋友"></i-tab-bar-item> -->
+  <!-- <i-tab-bar-item key="remind" icon="browse" current-icon="browse_fill" title="发现"></i-tab-bar-item> -->
+  <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" title="我的"></i-tab-bar-item>
 </i-tab-bar>

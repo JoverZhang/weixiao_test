@@ -1,3 +1,8 @@
 {
-  "navigationBarTitleText": "作业详情"
+  "navigationBarTitleText": "作业详情",
+  "usingComponents": {
+    "i-button": "../../components/iview/dist/button/index",
+    "i-message": "../../components/iview/dist/message/index",
+    "i-toast": "../../components/iview/dist/toast/index"
+  }
 }

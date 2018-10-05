@@ -100,6 +100,13 @@
   background-color: #5c5d5f;
   border-radius: 80rpx;
 }
+/*  */
+.tcontent .nreceive .nre_tipwindow .nre_tips .nre_tips_info .nre_tips_logo{
+  /* left: 0rpx; */
+  /* float: left; */
+  margin: 20rpx;
+  width: 90rpx;
+}
 
 .tcontent .nreceive .nre_tipwindow .nre_tips .nre_tips_info{
   position: relative;
