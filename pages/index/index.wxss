@@ -1,0 +1,188 @@
+/* pages/helloworld.wxss */
+
+.header{
+  height: 80rpx;
+  width: 100%;
+  background-color: #fff;
+}
+.header .option{
+  width: 450rpx;
+  margin: 0 auto;
+  display: block;
+}
+
+.header .option view{
+  padding: 0 30rpx;
+  display: inline-block;
+  width: 90rpx;
+  /* color: #bfbfbf; */
+  color: #d9d9db;
+  font-size: 40rpx;
+  font-weight: bold;
+  line-height: 75rpx;
+  text-align: center;
+}
+
+.header .option .inthis{
+  border-bottom: 6rpx solid #529eea;
+  color: #529eea;
+}
+
+.tcontent .option{
+  height: 80rpx;
+  width: 100%;
+  background-color: #f9f9f9;
+}
+
+.tcontent .option view{
+  height: 50rpx;
+  width: 140rpx;
+  /* color: #bfbfbf; */
+  color: #d9d9db;
+  font-size: 25rpx;
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
+  line-height: 50rpx;
+  margin: 15rpx 0rpx 15rpx 15rpx;
+  display: inline-block;
+  border-radius: 30rpx;
+}
+
+.tcontent .option .inthis{
+  color: #616571;
+}
+
+
+/* 作业receive */
+.work_tipwindow{
+  height: calc(100vh - 266rpx);
+  width: 100%;
+}
+
+
+/* 作业send */
+
+
+/* 留言receive */
+.message_tipwindow{
+  height: calc(100vh - 266rpx);
+  width: 100%;
+}
+
+
+/* 留言send */
+
+
+/* 通知receive */
+.notice_tipwindow{
+  height: calc(100vh - 266rpx);
+  width: 100%;
+  /* background-color: red; */
+}
+
+.tcontent .nreceive .nre_tipwindow .nre_tips{
+  height: 130rpx;
+  width: 100%;
+  background-color: white;
+}
+
+.tcontent .nreceive .nre_tipwindow .nre_tips:active{
+  background-color: #f5f5f5;
+}
+
+.tcontent .nreceive .nre_tipwindow .nre_tips .nre_tips_logo{
+  left: 0rpx;
+  float: left;
+  margin: 20rpx;
+  height: 90rpx;
+  width: 90rpx;
+  background-color: #5c5d5f;
+  border-radius: 80rpx;
+}
+
+.tcontent .nreceive .nre_tipwindow .nre_tips .nre_tips_info{
+  position: relative;
+  top: 30rpx;
+  float: left;
+  height: 100rpx;
+  width: 620rpx;
+  border-bottom: 2rpx solid #f5f5f5;
+  box-sizing: border-box;
+}
+
+
+.tcontent .nreceive .nre_tipwindow .nre_tips .nre_tips_info .nre_tips_name{
+  float: left;
+  height: 40rpx;
+  width: 375rpx;
+  color: #323335;
+  font-size: 32rpx;
+  font-weight: bold;
+  /* line-height: 100rpx; */
+  /* background-color: red; */
+  display: block;
+}
+
+.tcontent .nreceive .nre_tipwindow .nre_tips .nre_tips_info .nre_tips_time{
+  position: relative;
+  left: 140rpx;
+  float: left;
+  height: 40rpx;
+  width: 100rpx;
+  color: #d9d9db;
+  font-size: 24rpx;
+  /* line-height: 90rpx; */
+  /* background-color: red; */
+  display: block;
+}
+
+.tcontent .nreceive .nre_tipwindow .nre_tips .nre_tips_info .nre_tips_summary{
+  float: left;
+  height: 60rpx;
+  width: 550rpx;
+  color: #d9d9db;
+  font-size: 24rpx;
+  /* font-weight: bold; */
+  line-height: 50rpx;
+  /* background-color: blue; */
+  display: block;
+}
+
+/* 通知send */
+
+
+
+/* 底部 */
+/* .footer{
+  height: 70rpx;
+  width: 100%;
+  border-top: 5rpx solid #f5f5f5;
+}
+
+.footer .f_button{
+  margin: 10rpx 25rpx 20rpx 25rpx;
+  float: left;
+  height: 70rpx;
+  width: 100rpx;
+  background-color: #5c5d5f;
+  box-sizing: border-box;
+} */
+
+.footer .f_plane{
+  position: relative;
+  top: -25rpx;
+  z-index: 2;
+  /* margin-bottom: 20rpx; */
+  border-radius: 60rpx;
+  width: 130rpx;
+  height: 145rpx;
+}
+
+.footer .f_plane .f_plane_icon{
+  border-radius: 60rpx;
+  top: 20rpx;
+  width: 130rpx;
+  height: 130rpx;
+}
+

@@ -1,0 +1,15 @@
+{
+  "window": {
+    "navigationBarTitleText": "首页",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "component": true,
+  "usingComponents": {
+    "i-tab-bar": "../../components/iview/dist/tab-bar/index",
+    "i-tab-bar-item": "../../components/iview/dist/tab-bar-item/index"
+  }
+}
