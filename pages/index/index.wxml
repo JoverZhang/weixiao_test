@@ -162,6 +162,7 @@
   <view class="nsend" hidden="{{_nthis==2?'':'1'}}" hover-class="none" hover-stop-propagation="false">
     <scroll-view class="nse_tipwindow notice_tipwindow" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
       发布通知
+      <open-data type="userAvatarUrl"></open-data>
     </scroll-view>
   </view>
 </view>

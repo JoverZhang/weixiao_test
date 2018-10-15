@@ -3,7 +3,13 @@
     <i-message id="pop_message" type="ghost" bind:click="handleError">错误提醒</i-message>
     <form class="container" bindsubmit="formSubmit" bindreset="formReset">
         <textarea class="weui-textarea" name="content" placeholder="请输入作业内容" maxlength="-1"></textarea>
-
+        <view class="uploader_picture_container" style="height:{{_picture_height}}vw;" hover-class="none" hover-stop-propagation="false">
+            <block wx:for="{{_picture_label_list}}" wx:for-item="this" wx:key="">
+                <image class="uploader_picture" src="{{this}}" mode="aspectFill" data-src="{{this}}" bindtap="PreviewImage"></image>
+            </block>
+            <!-- <image class="uploader_picture" src="../../images/myapp/m-home1.png"></image> -->
+            <view class="weui-uploader__input-box uploader_picture" bindtap="addpicture" style="display:{{_picture_count==9?'none':'inline-block'}}"></view>
+        </view>
         <button class="submit_button" form-type="submit">提交</button>
     </form>
 <!-- </view> -->

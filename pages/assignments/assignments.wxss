@@ -24,8 +24,30 @@
     /* background-color: red; */
 }
 
+
+
+.container .uploader_picture_container{
+    padding: 0;
+    width: 90vw;
+    margin: auto;
+    /* background-color: red; */
+    display: block;
+}
+
+.container .uploader_picture_container .uploader_picture{
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    margin: 1vw;
+    width: 28vw;
+    height: 28vw;
+    display: inline-block;
+}
+
 .container .submit_button{
     width: 90vw;
     margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
     background-color: #529eea;
 }

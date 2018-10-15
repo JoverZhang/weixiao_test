@@ -10,6 +10,9 @@ Page({
     isSubmit: false,
     warn: "",
     content: "",
+    _picture_label_list: [],
+    _picture_count: 0,
+    _picture_height: 30,
   },
 
   formSubmit: function (e) {
@@ -58,6 +61,47 @@ Page({
       selector: '#pop_message',
       duration: 3
     });
+  },
+
+  addpicture(){
+    var self = this
+    wx.chooseImage({
+      count: 9 - self.data._picture_count,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success (res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
+        // console.log(tempFilePaths)
+        for (var i = 0; i < tempFilePaths.length; i ++){
+          // var path = '../../images/myapp/m-home1.png'
+          var path = tempFilePaths[i]
+          var index = self.data._picture_label_list.length
+          var url = '_picture_label_list[' + index + ']'
+          var count = self.data._picture_count
+          var height = self.data._picture_count==8?90:(Math.floor((count+1) / 3) + 1) * 30
+          count ++
+          // console.log(height + ' ' + count)
+          self.setData({
+            [url]: path,
+            _picture_count: count,
+            _picture_height: height,
+          })
+          // console.log(self.data._picture_label_list)
+        }
+      }
+    })
+  },
+
+  PreviewImage(e){
+    var self = this
+    var current=e.target.dataset.src;
+    // console.log(current)
+		wx.previewImage({
+		  	current: current, // 当前显示图片的http链接
+		  	urls: self.data._picture_label_list // 需要预览的图片http链接列表
+    })
+    // console.log(urls)
   },
 
   /**
