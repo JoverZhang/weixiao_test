@@ -1,97 +1,234 @@
 /* pages/helloworld.wxss */
 
-.header{
+swiper{
+  height: 100vh;
+  width: 100vw;
+}
+
+.home .header{
   height: 80rpx;
   width: 100%;
   background-color: #fff;
+  border-bottom: 1px solid #ebebeb;
 }
-.header .option{
+.home .header .option{
   width: 450rpx;
   margin: 0 auto;
   display: block;
 }
 
-.header .option view{
+.home .header .option view{
   padding: 0 30rpx;
   display: inline-block;
   width: 90rpx;
   /* color: #bfbfbf; */
-  color: #d9d9db;
+  color: #ebebeb;
   font-size: 40rpx;
   font-weight: bold;
   line-height: 75rpx;
   text-align: center;
 }
 
-.header .option .inthis{
+.home .header .option .inthis{
   border-bottom: 6rpx solid #529eea;
   color: #529eea;
 }
 
-.tcontent .option{
-  height: 80rpx;
-  width: 100%;
-  background-color: #f9f9f9;
-}
-
-.tcontent .option view{
-  height: 50rpx;
-  width: 140rpx;
-  /* color: #bfbfbf; */
-  color: #d9d9db;
-  font-size: 25rpx;
-  font-weight: bold;
-  text-align: center;
-  background-color: white;
-  line-height: 50rpx;
-  margin: 15rpx 0rpx 15rpx 15rpx;
-  display: inline-block;
-  border-radius: 30rpx;
-}
-
-.tcontent .option .inthis{
+.home .tcontent .option .inthis{
   color: #616571;
 }
 
 
 /* 作业receive */
-.work_tipwindow{
-  height: calc(100vh - 266rpx);
+.home .work_tipwindow{
+  height: calc(100vh - 156rpx);
   width: 100%;
+  background-color: #ebebeb;
+}
+
+.home .work .wre_tipwindow .item {
+  top: 5vw;
+  position: relative;
+  margin: 0 3vw;
+  margin-bottom: 5vw;
+  padding-bottom: 3vw;
+  /* background-color: red; */
+  width: 94vw;
+  height: auto;
+  text-align: center;
+}
+
+.home .work .wre_tipwindow .item .time{
+  position: relative;
+  margin: 0 auto;
+  padding: 1vw 2vw;
+  border-radius: 4px;
+  font-size: 3.2vw;
+  color: white;
+  margin: 0vw auto 3vw auto;
+  text-align: center;
+  line-height: 6vw;
+  background-color: rgba(212, 212, 212, 0.7);
+  display: inline;
+}
+
+.home .work .wre_tipwindow .item .content{
+  position: relative;
+  top: 3vw;
+  padding: 7vw 4vw;
+  width: 86vw;
+  height: auto;
+  font-size: 4.1vw;
+  text-align: left;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.home .work .wre_tipwindow .item .content:active{
+  background-color: #e5e5e5;
 }
 
 
-/* 作业send */
+.home .work .wre_tipwindow .item .content .teacherName{
+  position: relative;
+  margin-bottom: 0vw;
+  /* top: -1vw; */
+  /* left: -1vw; */
+}
+
+.home .work .wre_tipwindow .item .content .subjectName{
+  position: relative;
+  float: left;
+  width: 86vw;
+  top: -2vw;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3vw;
+}
+
+.home .work .wre_tipwindow .item .content text{
+  position: relative;
+  top: -1vw;
+  font-size: 4.09vw;
+}
+
+.home .work .wre_tipwindow .item .content .detail{
+  position: relative;
+  left: -4vw;
+  height: 5vw;
+  width: 94vw;
+  bottom: -5vw;
+  border-top: 1px solid #ebebeb;
+  display: block;
+}
+
+.home .work .wre_tipwindow .item .content .detail text{
+  margin: 2vw 6vw;
+  float: right;
+  font-size: 3.5vw;
+  color: #d0d0d0;
+}
+
 
 
 /* 留言receive */
-.message_tipwindow{
-  height: calc(100vh - 266rpx);
+.home .message_tipwindow{
+  height: calc(100vh - 156rpx);
   width: 100%;
 }
+.home .message_tipwindow .messageItem{
+  width: 100vw;
+  height: auto;
+  border-bottom: 1rpx solid #f5f5f5; 
+  /* background-color: red; */
+}
 
+.home .message_tipwindow .messageItem .senderName{
+  margin: 4vw 3vw;
+  width: 94vw;
+  font-size: 4vw;
+  font-weight: bold;
+}
 
-/* 留言send */
+.home .message_tipwindow .messageItem .content{
+  margin: 4vw 3vw;
+  width: 94vw;
+  font-size: 3.9vw;
+}
 
+.home .message_tipwindow .messageItem .time{
+  position: relative;
+  margin: 0vw 3vw;
+  bottom: 3vw;
+  width: 94vw;
+  font-size: 3vw;
+  color: gray;
+}
+
+.home .message_tipwindow .messageItem i-icon{
+  position: relative;
+  margin: 0vw 3vw;
+  float: right;
+  bottom: 3vw;
+}
+
+.home .message_tipwindow .messageSubmit{
+  position: relative;
+  float: left;
+
+  width: 100vw;
+  height: 4vw;
+  padding: 4vw;
+  /* bottom: 300rpx; */
+  border-top: 2px solid #ebebeb;
+  background-color: #edf1f4;
+  /* background-color: red; */
+}
+
+.home .message_tipwindow .messageSubmit .comment{
+  position: relative;
+  float: left;
+  top: 0rpx;
+  bottom: 4vw;
+  height: 6vw;
+  width: 72vw;
+  font-size: 4vw;
+  border-bottom: 1px solid #529eea;
+}
+
+.home .message_tipwindow .messageSubmit .submit{
+  position: relative;
+  float: left;
+  top: -2vw;
+  background-color: #529eea;
+  font-size: 4vw;
+  line-height: 8vw;
+  margin: 0vw 1vw;
+  height: 8vw;
+  border: none;
+  width: 18vw;
+}
 
 /* 通知receive */
-.notice_tipwindow{
-  height: calc(100vh - 266rpx);
+.home .notice_tipwindow{
+  height: calc(100vh - 156rpx);
   width: 100%;
   /* background-color: red; */
 }
 
-.tcontent .nreceive .nre_tipwindow .nre_tips{
+.home .tcontent .nre_tipwindow .nre_tips{
   height: 130rpx;
   width: 100%;
   background-color: white;
+  border-bottom: 2rpx solid #f5f5f5;
+  box-sizing: border-box;
 }
 
-.tcontent .nreceive .nre_tipwindow .nre_tips:active{
+.home .tcontent .nre_tipwindow .nre_tips:active{
   background-color: #f5f5f5;
 }
 
-.tcontent .nreceive .nre_tipwindow .nre_tips .nre_tips_logo{
+.home .tcontent .nre_tipwindow .nre_tips .nre_tips_logo{
   left: 0rpx;
   float: left;
   margin: 20rpx;
@@ -101,25 +238,23 @@
   border-radius: 80rpx;
 }
 /*  */
-.tcontent .nreceive .nre_tipwindow .nre_tips .nre_tips_info .nre_tips_logo{
+.home .tcontent .nre_tipwindow .nre_tips .nre_tips_info .nre_tips_logo{
   /* left: 0rpx; */
   /* float: left; */
   margin: 20rpx;
   width: 90rpx;
 }
 
-.tcontent .nreceive .nre_tipwindow .nre_tips .nre_tips_info{
+.home .tcontent .nre_tipwindow .nre_tips .nre_tips_info{
   position: relative;
   top: 30rpx;
   float: left;
   height: 100rpx;
   width: 620rpx;
-  border-bottom: 2rpx solid #f5f5f5;
-  box-sizing: border-box;
 }
 
 
-.tcontent .nreceive .nre_tipwindow .nre_tips .nre_tips_info .nre_tips_name{
+.home .tcontent .nre_tipwindow .nre_tips .nre_tips_info .nre_tips_name{
   float: left;
   height: 40rpx;
   width: 375rpx;
@@ -131,7 +266,7 @@
   display: block;
 }
 
-.tcontent .nreceive .nre_tipwindow .nre_tips .nre_tips_info .nre_tips_time{
+.home .tcontent .nre_tipwindow .nre_tips .nre_tips_info .nre_tips_time{
   position: relative;
   left: 140rpx;
   float: left;
@@ -144,7 +279,7 @@
   display: block;
 }
 
-.tcontent .nreceive .nre_tipwindow .nre_tips .nre_tips_info .nre_tips_summary{
+.home .tcontent .nre_tipwindow .nre_tips .nre_tips_info .nre_tips_summary{
   float: left;
   height: 60rpx;
   width: 550rpx;
@@ -156,30 +291,87 @@
   display: block;
 }
 
-/* 通知send */
+
+
+
+
+
+/* 我的 */
+.myInfo{
+  z-index: -1;
+  width: 100vw;
+  height: calc(100vh - 106rpx);
+}
+.myInfo .info{
+  height: 22vw;
+  width: 100vw;
+  background-color: #fff;
+  display: block;
+  /* border-bottom: 2rpx solid #F6F6F6; */
+}
+
+.myInfo .info:active{
+  background-color: #f9f9f9;
+}
+
+.myInfo .info .head{
+  position: relative;
+  float: left;
+  margin: 0 4vw;
+  top: 2vw;
+  height: 18vw;
+  width: 18vw;
+  display: block;
+}
+
+.myInfo .info .name{
+  position: relative;
+  top: 5vw;
+  font-size: 5vw;
+}
+
+.myInfo .info .id{
+  position: relative;
+  top: 5.5vw;
+  font-size: 4vw;
+  color: #e0e0e0;
+  display: block;
+}
+
+.myInfo .classBanner{
+  position: relative;
+  line-height: 7vw;
+  width: 100vw;
+  height: 7vw;
+  font-size: 3vw;
+  font-weight: 200;
+  background-color: #F6F6F6;
+}
+
+.myInfo .classBanner .classBannerList .classItem{
+  padding-left: 5vw; 
+  width: calc(100vw - 95rpx);
+  height: 10vw;
+  border-bottom: 2rpx solid #f6f6f6;
+  line-height: 10vw;
+  font-size: 35rpx;
+  font-weight: 400;
+}
+
+.myInfo .classBanner .classBannerList .classItem:active{
+  background-color: #f9f9f9;
+  color: #555;
+}
+
 
 
 
 /* 底部 */
-/* .footer{
-  height: 70rpx;
-  width: 100%;
-  border-top: 5rpx solid #f5f5f5;
-}
-
-.footer .f_button{
-  margin: 10rpx 25rpx 20rpx 25rpx;
-  float: left;
-  height: 70rpx;
-  width: 100rpx;
-  background-color: #5c5d5f;
-  box-sizing: border-box;
-} */
 
 .footer .f_plane{
   position: relative;
   top: -25rpx;
-  z-index: 2;
+  z-index: 1;
   /* margin-bottom: 20rpx; */
   border-radius: 60rpx;
   width: 130rpx;
@@ -193,3 +385,27 @@
   height: 130rpx;
 }
 
+.footer .ball{
+  z-index: 5;
+  position: fixed;
+  bottom: 200rpx;
+  width: 130rpx;
+  height: 130rpx;
+  text-align: center;
+  color: white;
+  font-size: 4vw;
+  line-height: 130rpx;
+  border-radius: 100rpx;
+  background-color: grey;
+}
+
+.ballEnd{
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: gray;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+}

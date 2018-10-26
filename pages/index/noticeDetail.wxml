@@ -1,0 +1,39 @@
+<!--pages/index/noticeDetail.wxml-->
+<scroll-view class="noticeDetail" scroll-y="true" scroll-with-animation="" enable-back-to-top="ture" scroll-top="10000000000000">
+    <view class="item" hover-class="none" hover-stop-propagation="false">
+        <view class="time" hover-class="none" hover-stop-propagation="false">00:00</view>
+        <view class="content" hover-class="none" hover-stop-propagation="false">
+            <text>三年级二班任务:\n就测试随便发发，其实也没什么特别重要的东西。</text>
+        </view>
+    </view>
+        <view class="item" hover-class="none" hover-stop-propagation="false">
+        <view class="time" hover-class="none" hover-stop-propagation="false">00:01</view>
+        <view class="content" hover-class="none" hover-stop-propagation="false">
+            <text>三年级二班任务:\n就测试随便发发，其实也没什么特别重要的东西。</text>
+        </view>
+    </view>
+        <view class="item" hover-class="none" hover-stop-propagation="false">
+        <view class="time" hover-class="none" hover-stop-propagation="false">00:02</view>
+        <view class="content" hover-class="none" hover-stop-propagation="false">
+            <text>三年级二班任务:\n就测试随便发发，其实也没什么特别重要的东西。</text>
+        </view>
+    </view>
+        <view class="item" hover-class="none" hover-stop-propagation="false">
+        <view class="time" hover-class="none" hover-stop-propagation="false">00:03</view>
+        <view class="content" hover-class="none" hover-stop-propagation="false">
+            <text>三年级二班任务:\n就测试随便发发，其实也没什么特别重要的东西。</text>
+        </view>
+    </view>
+        <view class="item" hover-class="none" hover-stop-propagation="false">
+        <view class="time" hover-class="none" hover-stop-propagation="false">00:04</view>
+        <view class="content" hover-class="none" hover-stop-propagation="false">
+            <text>三年级二班任务:\n就测试随便发发，其实也没什么特别重要的东西。</text>
+        </view>
+    </view>
+        <view class="item" hover-class="none" hover-stop-propagation="false">
+        <view class="time" hover-class="none" hover-stop-propagation="false">00:05</view>
+        <view class="content" hover-class="none" hover-stop-propagation="false">
+            <text>三年级二班任务:\n就测试随便发发，其实也没什么特别重要的东西。</text>
+        </view>
+    </view>
+</scroll-view>

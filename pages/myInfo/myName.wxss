@@ -1,0 +1,21 @@
+/* pages/myInfo/myName.wxss */
+
+.modifyName{
+    width: 100vw;
+    height: 30vw;
+    /* background-color: red; */
+}
+
+.modifyName .modifyNameInput{
+    margin: 8vw 4vw;
+    padding: 0 3vw 10rpx 3vw; 
+    border-bottom: 2rpx solid #529eea;
+}
+
+.modifyName .modifyNameSubmit{
+    width: 90vw;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-color: #529eea;
+}

@@ -1,0 +1,24 @@
+/* pages/assignments/messages.wxss */
+
+.container{
+    width: 100vw;
+    height: 100vh;
+}
+
+.weui-textarea{
+    position: relative;
+    margin: 30rpx 5vw;
+    top: 0;
+    width: 90vw;
+    height: 250rpx;
+    display: block;
+    /* background-color: red; */
+}
+
+.container .submit_button{
+    width: 90vw;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-color: #529eea;
+}

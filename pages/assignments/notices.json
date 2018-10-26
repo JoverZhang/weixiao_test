@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "发布通知",
+    "usingComponents": {
+        "i-button": "../../components/iview/dist/button/index",
+        "i-message": "../../components/iview/dist/message/index",
+        "i-toast": "../../components/iview/dist/toast/index",
+        "i-radio-group": "../../components/iview/dist/radio-group/index",
+        "i-radio": "../../components/iview/dist/radio/index",
+        "i-drawer": "../../components/iview/dist/drawer/index",
+        "i-checkbox-group": "../../components/iview/dist/checkbox-group/index",
+        "i-checkbox": "../../components/iview/dist/checkbox/index"
+    }
+}

@@ -1,0 +1,45 @@
+/* pages/index/noticeDetail.wxss */
+
+.noticeDetail{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: #ebebeb;
+}
+
+.noticeDetail .item {
+    top: 5vw;
+    position: relative;
+    margin: 0 4vw;
+    margin-bottom: 5vw;
+    padding-bottom: 3vw;
+    /* background-color: red; */
+    width: 92vw;
+    height: auto;
+    text-align: center;
+}
+
+.noticeDetail .item .time{
+    position: relative;
+    padding: 1vw 2vw;
+    border-radius: 4px;
+    font-size: 3.2vw;
+    color: white;
+    margin: 0vw auto 3vw auto;
+    text-align: center;
+    line-height: 6vw;
+    background-color: rgba(212, 212, 212, 0.7);
+    display: inline;
+}
+
+.noticeDetail .item .content{
+    position: relative;
+    top: 3vw;
+    padding: 4vw;
+    width: auto;
+    height: auto;
+    font-size: 4.2vw;
+    text-align: left;
+    border-radius: 5px;
+    background-color: white;
+}

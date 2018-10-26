@@ -11,6 +11,10 @@
   "usingComponents": {
     "i-tab-bar": "../../components/iview/dist/tab-bar/index",
     "i-tab-bar-item": "../../components/iview/dist/tab-bar-item/index",
-    "i-swipeout": "../../components/iview/dist/swipeout/index"
+    "i-swipeout": "../../components/iview/dist/swipeout/index",
+    "i-modal": "../../components/iview/dist/modal/index",
+    "i-collapse": "../../components/iview/dist/collapse/index",
+    "i-collapse-item": "../../components/iview/dist/collapse-item/index",
+    "i-icon": "../../components/iview/dist/icon/index"
   }
 }

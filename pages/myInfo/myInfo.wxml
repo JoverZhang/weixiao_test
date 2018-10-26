@@ -1,0 +1,17 @@
+<!-- pages/myInfo/myInfo.wxml -->
+<view class="myHeadFrame" hover-class="none" hover-stop-propagation="false">
+    <view class="myHead" hover-class="none" hover-stop-propagation="false">
+        <view class="fHead" hover-class="none" hover-stop-propagation="false">头像</view>
+        <view class="pHead" hover-class="none" hover-stop-propagation="false">
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+    </view>
+</view>
+<view class="myNameFrame" hover-class="none" hover-stop-propagation="false" bindtap="toMyName">
+    <view class="myName" hover-class="none" hover-stop-propagation="false">
+        <view class="fName" hover-class="none" hover-stop-propagation="false">昵称</view>
+        <view class="pName" hover-class="none" hover-stop-propagation="false">
+            <open-data type="userNickName"></open-data>
+        </view>
+    </view>
+</view>

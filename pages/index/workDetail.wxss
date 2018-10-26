@@ -1,0 +1,48 @@
+/* pages/index/workDetail.wxss */
+.workDetail{
+    width: 90vw;
+    height: auto;
+    margin: 6vw 5vw;
+}
+
+.workDetail .subjectName{
+    position: relative;
+    top: -2vw;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3vw;
+  }
+
+.workDetail .workContent{
+    width: 88vw;
+    margin: 4vw 1vw;
+    font-size: 4vw;
+}
+
+
+.picture{
+    position: relative;
+    float: left;
+    bottom: 4vw;
+    width: 90vw;
+    display: block;
+}
+
+.picture .pictureItem{
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    margin: 1vw;
+    width: 28vw;
+    height: 28vw;
+    background-color: grey;
+    display: block;
+}
+
+.workDetail .time{
+    position: relative;
+    margin: 4vw 1vw;
+    font-size: 3vw;
+    color: #a1a1a1;
+    display: block;
+}

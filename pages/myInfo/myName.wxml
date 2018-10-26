@@ -1,0 +1,7 @@
+<!-- pages/myInfo/myName.wxml -->
+<form action="" bindsubmit="formSubmit">
+    <view class="modifyName" hover-class="none" hover-stop-propagation="false">
+        <input class="modifyNameInput" type="text" maxlength="20" value="{{_username}}"></input>
+        <button class="modifyNameSubmit" form-type="submit">确定</button>
+    </view>
+</form>

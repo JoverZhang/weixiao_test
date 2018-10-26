@@ -2,13 +2,19 @@
   "cloud": true,
   "pages": [
     "pages/index/index",
-    "pages/assignments/assignments"
+    "pages/index/workDetail",
+    "pages/index/noticeDetail",
+    "pages/assignments/assignments",
+    "pages/assignments/messages",
+    "pages/assignments/notices",
+    "pages/myInfo/myInfo",
+    "pages/myInfo/myName"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#303030",
+    "navigationBarBackgroundColor": "#303030",
+    "navigationBarTextStyle": "white",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "微校",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "微校"
   }
 }

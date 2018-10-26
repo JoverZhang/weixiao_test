@@ -1,184 +1,125 @@
 <!-- pages/helloworld.wxml -->
-<!-- 头部 -->
-<view class="header">
-  <view class="option">
-    <view class="o1 {{_this==1?'inthis':''}}" data-num="1" bindtap="changepages">作业</view>
-    <view class="o2 {{_this==2?'inthis':''}}" data-num="2" bindtap="changepages">留言</view>
-    <view class="o3 {{_this==3?'inthis':''}}" data-num="3" bindtap="changepages">通知</view>
-  </view>
-</view>
-<!-- 作业 -->
-<view class="tcontent work" hidden="{{_this==1?'':'1'}}">
-  <view class="option">
-    <view class="o1 {{_wthis==1?'inthis':''}}" data-num="1" bindtap="changewms">我收到的</view>
-    <view class="o2 {{_wthis==2?'inthis':''}}" data-num="2" bindtap="changewms">我发布的</view>
-  </view>
-  <view class="wreceive" hidden="{{_wthis==1?'':'1'}}" hover-class="none" hover-stop-propagation="false">
-    <scroll-view class="wre_tipwindow work_tipwindow" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
-      收到作业
-    </scroll-view>
-  </view>
-  <view class="wsend" hidden="{{_wthis==2?'':'1'}}" hover-class="none" hover-stop-propagation="false">
-    <scroll-view class="wse_tipwindow work_tipwindow" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
-      发布作业
-    </scroll-view>
-  </view>
-</view>
-<!-- 留言 -->
-<view class="tcontent message" hidden="{{_this==2?'':'1'}}">
-  <view class="option">
-    <view class="o1 {{_mthis==1?'inthis':''}}" data-num="1" bindtap="changewms">我收到的</view>
-    <view class="o2 {{_mthis==2?'inthis':''}}" data-num="2" bindtap="changewms">我发布的</view>
-  </view>
-  <view class="mreceive" hidden="{{_mthis==1?'':'1'}}" hover-class="none" hover-stop-propagation="false">
-    <scroll-view class="mre_tipwindow message_tipwindow" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
-      收到留言
-    </scroll-view>
-  </view>
-  <view class="msend" hidden="{{_mthis==2?'':'1'}}" hover-class="none" hover-stop-propagation="false">
-    <scroll-view class="mse_tipwindow message_tipwindow" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
-      发布留言
-    </scroll-view>
-  </view>
-</view>
-<!-- 通知 -->
-<view class="tcontent notice" hidden="{{_this==3?'':'1'}}">
-  <view class="option">
-    <view class="o1 {{_nthis==1?'inthis':''}}" data-num="1" bindtap="changewms">我收到的</view>
-    <view class="o2 {{_nthis==2?'inthis':''}}" data-num="2" bindtap="changewms">我发布的</view>
-  </view>
-  <view class="nreceive" hidden="{{_nthis==1?'':'1'}}" hover-class="none" hover-stop-propagation="false">
-    <scroll-view class="nre_tipwindow notice_tipwindow" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
-
-      <view class="nre_tips" hover-class="none" hover-stop-propagation="false">
-        <view class="nre_tips_logo" hover-class="none" hover-stop-propagation="false"></view>
-        <view class="nre_tips_info" hover-class="none" hover-stop-propagation="false">
-          <view class="nre_tips_name" hover-class="none" hover-stop-propagation="false">
-            三年级二班任务
-          </view>
-          <view class="nre_tips_time" hover-class="none" hover-stop-propagation="false">09-16</view>
-          <view class="nre_tips_summary" hover-class="none" hover-stop-propagation="false">
-            有人提交新任务
-          </view>
+<view class="ballEnd" hover-class="none" hover-stop-propagation="false" hidden="{{_plane_miss==2?'':'1'}}" bindtap="plane"></view>
+<swiper indicator-dots="{{indicatorDots}}" current="{{swiperCurrent}}" bindchange="listenSwiper" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <!-- 首页 -->
+  <swiper-item>
+    <view class="home" hover-class="none" hover-stop-propagation="false" hidden="{{hideHome}}">
+      <!-- 头部 -->
+      <view class="header">
+        <view class="option">
+          <view class="o1 {{_this==1?'inthis':''}}" data-num="1" bindtap="changepages">作业</view>
+          <view class="o2 {{_this==2?'inthis':''}}" data-num="2" bindtap="changepages">留言</view>
+          <view class="o3 {{_this==3?'inthis':''}}" data-num="3" bindtap="changepages">通知</view>
         </view>
       </view>
-
-<!--  -->
-      <!-- <i-swipeout i-class="nre_tips i-swipeout-demo-item" actions="{{actions}}">
-        <view class="nre_tips_info" slot="content">
-      //    <view class="i-swipeout-image">
-            <image class="nre_tips_logo" mode="widthFix" src="../../images/myapp/m-icon.png"/>
-      //    </view>
-          <view class="i-swipeout-des">
-            <view class="i-swipeout-des-h2">第七个小矮人</view>
-            <view class="i-swipeout-des-detail">乐观善良的7个小矮人原本过着简单快乐的生活，不料诅咒公主的巫婆利用小矮人进入.</view>
-          </view>
-        </view>
-      </i-swipeout> -->
-<!--  -->
-
-      <!-- <view class="nre_tips" hover-class="none" hover-stop-propagation="false">
-        <view class="nre_tips_logo" hover-class="none" hover-stop-propagation="false"></view>
-        <view class="nre_tips_info" hover-class="none" hover-stop-propagation="false">
-          <view class="nre_tips_name" hover-class="none" hover-stop-propagation="false">三年级二班调查</view>
-          <view class="nre_tips_time" hover-class="none" hover-stop-propagation="false">09-16</view>
-          <view class="nre_tips_summary" hover-class="none" hover-stop-propagation="false">调查结果有新变动</view>
-        </view>
+      <!-- 作业 -->
+      <view class="tcontent work" hidden="{{_this==1?'':'1'}}">
+        <scroll-view class="wre_tipwindow work_tipwindow" scroll-y="true" scroll-with-animation="" enable-back-to-top="true">
+          <block wx:for="11111" wx:key="">
+            <view class="item" hover-class="none" hover-stop-propagation="false">
+              <view class="time" hover-class="none" hover-stop-propagation="false">00:00</view>
+              <view class="content" hover-class="none" hover-stop-propagation="false" bindtap="toWorkDetail">
+                <view class="teacherName" hover-class="none" hover-stop-propagation="false">
+                  欧阳老师
+                </view>
+                <view class="subjectName" hover-class="none" hover-stop-propagation="false">
+                  语文
+                </view>
+                <text>三年级二班作业:\n就测试随便发发，其实也没什么特别重要的东西西西西。</text>
+                <view class="detail" hover-class="none" hover-stop-propagation="false">
+                  <text>详细信息</text>
+                </view>
+              </view>
+            </view>
+          </block>
+        </scroll-view>
       </view>
-
-      <view class="nre_tips" hover-class="none" hover-stop-propagation="false">
-        <view class="nre_tips_logo" hover-class="none" hover-stop-propagation="false"></view>
-        <view class="nre_tips_info" hover-class="none" hover-stop-propagation="false">
-          <view class="nre_tips_name" hover-class="none" hover-stop-propagation="false">口袋家庭通知</view>
-          <view class="nre_tips_time" hover-class="none" hover-stop-propagation="false">09-16</view>
-          <view class="nre_tips_summary" hover-class="none" hover-stop-propagation="false">没什么好通知的</view>
-        </view>
+      <!-- 留言 -->
+      <view class="tcontent message" hidden="{{_this==2?'':'1'}}">
+        <scroll-view class="mre_tipwindow message_tipwindow" scroll-y="true" scroll-with-animation="" enable-back-to-top="true">
+          <block wx:for="11111" wx:key="">
+            <view class="messageItem" hover-class="none" hover-stop-propagation="false" bindtap="{{closeMessageComment}}">
+              <view class="senderName" hover-class="none" hover-stop-propagation="false">欧阳老师</view>
+              <view class="content" hover-class="none" hover-stop-propagation="false">
+                就测试留言随便发发，其实也没什么特别重要的东西西西西。
+              </view>
+              <text class="time" selectable="false" space="false" decode="false">00:00</text>
+              <i-icon type="brush" size="28" color="#80848f" data-num="{{index}}" hover-stop-propagation="false" bindtap="openComment" />
+            </view>
+                <block wx:if="{{showMessageComment==index}}">
+                  <form class="messageSubmit" bindsubmit="messageCommentSubmit" hidden="">
+                    <textarea class="comment" auto-focus="ture" name="content" show-confirm-bar="" placeholder="请输入留言内容" maxlength="-1"></textarea>
+                    <button class="submit" form-type="submit">发送</button>
+                  </form>
+                </block>
+          </block>
+        </scroll-view>
       </view>
-
-      <view class="nre_tips" hover-class="none" hover-stop-propagation="false">
-        <view class="nre_tips_logo" hover-class="none" hover-stop-propagation="false"></view>
-        <view class="nre_tips_info" hover-class="none" hover-stop-propagation="false">
-          <view class="nre_tips_name" hover-class="none" hover-stop-propagation="false">三年级二班入班申请</view>
-          <view class="nre_tips_time" hover-class="none" hover-stop-propagation="false">09-16</view>
-          <view class="nre_tips_summary" hover-class="none" hover-stop-propagation="false">有未处理的入班申请</view>
-        </view>
+      <!-- 通知 -->
+      <view class="tcontent notice" hidden="{{_this==3?'':'1'}}">
+        <scroll-view class="nre_tipwindow notice_tipwindow" scroll-y="true" scroll-with-animation="" enable-back-to-top="true">
+          <block wx:for="1111111111" wx:key="">
+            <view class="nre_tips" hover-class="none" hover-stop-propagation="false" bindtap="toNoticeDetail">
+              <view class="nre_tips_logo" hover-class="none" hover-stop-propagation="false"></view>
+              <view class="nre_tips_info" hover-class="none" hover-stop-propagation="false">
+                <view class="nre_tips_name" hover-class="none" hover-stop-propagation="false">
+                  三年级二班任务
+                </view>
+                <view class="nre_tips_time" hover-class="none" hover-stop-propagation="false">
+                  09-16
+                </view>
+                <view class="nre_tips_summary" hover-class="none" hover-stop-propagation="false">
+                  有人提交新任务
+                </view>
+              </view>
+            </view>
+          </block>
+        </scroll-view>
       </view>
-
-      <view class="nre_tips" hover-class="none" hover-stop-propagation="false">
-        <view class="nre_tips_logo" hover-class="none" hover-stop-propagation="false"></view>
-        <view class="nre_tips_info" hover-class="none" hover-stop-propagation="false">
-          <view class="nre_tips_name" hover-class="none" hover-stop-propagation="false">三年级二十九班任务</view>
-          <view class="nre_tips_time" hover-class="none" hover-stop-propagation="false">09-16</view>
-          <view class="nre_tips_summary" hover-class="none" hover-stop-propagation="false">有未处理的入班申请</view>
+    </view>
+  </swiper-item>
+  <!-- 我的 -->
+  <swiper-item>
+    <view class="myInfo" hover-class="none" hover-stop-propagation="false" hidden="{{hideMyInfo}}">
+      <i-modal visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
+        <view>确定退出“{{classItemList[popNum].classItemName}}”吗？</view>
+      </i-modal>
+      <view class="info" hover-class="none" hover-stop-propagation="false" bindtap="toModifyMyInfo">
+        <view class="head">
+          <open-data type="userAvatarUrl"></open-data>
         </view>
+        <view class="name">
+          <open-data type="userNickName"></open-data>
+        </view>
+        <view class="id">微校号：abc123</view>
       </view>
-
-      <view class="nre_tips" hover-class="none" hover-stop-propagation="false">
-        <view class="nre_tips_logo" hover-class="none" hover-stop-propagation="false"></view>
-        <view class="nre_tips_info" hover-class="none" hover-stop-propagation="false">
-          <view class="nre_tips_name" hover-class="none" hover-stop-propagation="false">消息提醒</view>
-          <view class="nre_tips_time" hover-class="none" hover-stop-propagation="false">09-16</view>
-          <view class="nre_tips_summary" hover-class="none" hover-stop-propagation="false">有未处理的入班申请</view>
+      <i-collapse-item class="classBanner" title="已加入班级" name="name1">
+        <view slot="content" class="classBannerList">
+          <block wx:for="{{classItemList}}" wx:key="#">
+            <view class="classItem" data-num="{{index}}" bindlongpress="handleOpen">
+              {{item.classItemName}}
+            </view>
+          </block>
         </view>
-      </view>
-
-      <view class="nre_tips" hover-class="none" hover-stop-propagation="false">
-        <view class="nre_tips_logo" hover-class="none" hover-stop-propagation="false"></view>
-        <view class="nre_tips_info" hover-class="none" hover-stop-propagation="false">
-          <view class="nre_tips_name" hover-class="none" hover-stop-propagation="false">三年级二十七班任务</view>
-          <view class="nre_tips_time" hover-class="none" hover-stop-propagation="false">09-16</view>
-          <view class="nre_tips_summary" hover-class="none" hover-stop-propagation="false">有人提交新任务</view>
-        </view>
-      </view>
-
-      <view class="nre_tips" hover-class="none" hover-stop-propagation="false">
-        <view class="nre_tips_logo" hover-class="none" hover-stop-propagation="false"></view>
-        <view class="nre_tips_info" hover-class="none" hover-stop-propagation="false">
-          <view class="nre_tips_name" hover-class="none" hover-stop-propagation="false">三年级二十八班调查</view>
-          <view class="nre_tips_time" hover-class="none" hover-stop-propagation="false">09-16</view>
-          <view class="nre_tips_summary" hover-class="none" hover-stop-propagation="false">调查结果有新变动</view>
-        </view>
-      </view>
-
-      <view class="nre_tips" hover-class="none" hover-stop-propagation="false">
-        <view class="nre_tips_logo" hover-class="none" hover-stop-propagation="false"></view>
-        <view class="nre_tips_info" hover-class="none" hover-stop-propagation="false">
-          <view class="nre_tips_name" hover-class="none" hover-stop-propagation="false">三年级二十六班调查</view>
-          <view class="nre_tips_time" hover-class="none" hover-stop-propagation="false">09-16</view>
-          <view class="nre_tips_summary" hover-class="none" hover-stop-propagation="false">调查结果有新变动</view>
-        </view>
-      </view>
-
-      <view class="nre_tips" hover-class="none" hover-stop-propagation="false">
-        <view class="nre_tips_logo" hover-class="none" hover-stop-propagation="false"></view>
-        <view class="nre_tips_info" hover-class="none" hover-stop-propagation="false">
-          <view class="nre_tips_name" hover-class="none" hover-stop-propagation="false">三年级二十五班调查</view>
-          <view class="nre_tips_time" hover-class="none" hover-stop-propagation="false">09-16</view>
-          <view class="nre_tips_summary" hover-class="none" hover-stop-propagation="false">调查结果有新变动</view>
-        </view>
-      </view> -->
-    </scroll-view>
-  </view>
-  <view class="nsend" hidden="{{_nthis==2?'':'1'}}" hover-class="none" hover-stop-propagation="false">
-    <scroll-view class="nse_tipwindow notice_tipwindow" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
-      发布通知
-      <open-data type="userAvatarUrl"></open-data>
-    </scroll-view>
-  </view>
-</view>
-<!-- <view class="footer" hover-class="none" hover-stop-propagation="false">
-  <view class="f_button fo1" hover-class="none" hover-stop-propagation="false"></view>
-  <view class="f_button fo2" hover-class="none" hover-stop-propagation="false"></view>
-  <view class="f_button fo3" hover-class="none" hover-stop-propagation="false"></view>
-  <view class="f_button fo4" hover-class="none" hover-stop-propagation="false"></view>
-  <view class="f_button fo5" hover-class="none" hover-stop-propagation="false"></view>
-</view> -->
-<i-tab-bar class="footer" current="{{ current }}" color="#529eea" bindchange="handleChange">
+      </i-collapse-item>
+    </view>
+  </swiper-item>
+</swiper>
+<!-- 底部导航 -->
+<i-tab-bar class="footer" current="{{ current }}" color="#529eea" bindchange="handleChange" fixed="true">
   <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
-  <view class="f_plane" hover-class="none" hover-stop-propagation="false" bindtap="to_assignments" bindtouchstart="plane_miss_begin" bindtouchend="plane_miss_end">
-    <image class="f_plane_icon" src="../../images/myapp/m-home{{_plane_miss}}.png" />
+  <!-- <view class="f_plane" hover-class="none" hover-stop-propagation="false" bindtap="to_assignments" bindtouchstart="plane_miss_begin" bindtouchend="plane_miss_end"> -->
+  <view class="f_plane" hover-class="none" hover-stop-propagation="false" bindtap="plane">
+    <image animation="{{animationData0}}" class="f_plane_icon" src="../../images/myapp/m-home{{_plane_miss}}.png" />
   </view>
-  <!-- <i-tab-bar-item key="group" icon="group" current-icon="group_fill" title="朋友"></i-tab-bar-item> -->
-  <!-- <i-tab-bar-item key="remind" icon="browse" current-icon="browse_fill" title="发现"></i-tab-bar-item> -->
   <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" title="我的"></i-tab-bar-item>
+  <view animation="{{animationData1}}" class="ball" hover-class="none" hover-stop-propagation="false" bindtap="to_assignments">
+    作业
+  </view>
+  <view animation="{{animationData2}}" class="ball" hover-class="none" hover-stop-propagation="false" bindtap="to_messages">
+    留言
+  </view>
+  <view animation="{{animationData3}}" class="ball" hover-class="none" hover-stop-propagation="false" bindtap="to_notices">
+    通知
+  </view>
 </i-tab-bar>

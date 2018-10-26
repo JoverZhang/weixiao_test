@@ -1,0 +1,13 @@
+<!-- pages/index/workDetail.wxml -->
+<view class="workDetail" hover-class="none" hover-stop-propagation="false">
+    <view class="subjectName" hover-class="none" hover-stop-propagation="false">语文</view>
+    <view class="workContent" hover-class="none" hover-stop-propagation="false">
+        <text>三年级二班作业:\n就测试随便发发，其实也没什么特别重要的东西西西西西西西西。</text>
+    </view>
+    <view class="picture" hover-class="none" hover-stop-propagation="false">
+        <block wx:for="1111" wx:for-item="this" wx:key="">
+            <image class="pictureItem" src="{{this}}" mode="aspectFill" data-src="{{this}}" bindtap="PreviewImage"></image>
+        </block>
+    </view>
+    <view class="time" hover-class="none" hover-stop-propagation="false">00:00</view>
+</view>

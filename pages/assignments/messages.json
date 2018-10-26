@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "发布留言",
+    "usingComponents": {
+        "i-button": "../../components/iview/dist/button/index",
+        "i-message": "../../components/iview/dist/message/index",
+        "i-toast": "../../components/iview/dist/toast/index"
+    }
+}

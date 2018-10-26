@@ -1,4 +1,4 @@
-// pages/assignments/assignments.js
+// pages/assignments/notices.js
 const { $Message } = require('../../components/iview/dist/base/index');
 const { $Toast } = require('../../components/iview/dist/base/index');
 Page({
@@ -15,19 +15,16 @@ Page({
     isSubmit: false,
     warn: "",
     content: "",
-    _picture_label_list: [],
-    _picture_count: 0,
-    _picture_height: 30,
     //choice subject
     subjectList: [{
       id: 1,
-      name: '语文',
+      name: '通知',
     }, {
       id: 2,
-      name: '数学'
+      name: '任务'
     }, {
       id: 3,
-      name: '英语'
+      name: '调查'
     }],
     subjectCurrent: '',
     //choice class
@@ -77,45 +74,18 @@ Page({
     var that = this;
     if (!content) {
       this.setData({
-        warn: "作业内容不能为空！",
+        warn: "通知内容不能为空！",
       })
       this.handleError()
       return;
     } else {
-      var openid = getApp().globalData.openid;
-      wx.request({
-        url: 'https://www.xs.314reader.cn//workstore',
-        method: 'POST',
-        data: {
-          text: content,
-          openid: openid
-        },
-        header: { 'content-type': 'application/x-www-form-urlencoded' },
-        success: function (res) {
-          let workinfoId = res.data;
-          let image = that.data._picture_label_list;
-          let imageLength = that.data._picture_label_list.length
-          if (workinfoId != 0 && image['0']) {
-            for (let i = 0; i < imageLength; i++) {
-              wx.uploadFile({
-                url: 'https://www.xs.314reader.cn/upload',
-                filePath: image[i],
-                name: 'image',
-                formData: {
-                  workinfo_id: workinfoId
-                }
-              })
-            }
-            //提示上传成功
-            self.handleSuccess()
-            setTimeout(() => {
-              wx.navigateBack({
-                delta: 1
-              });
-            }, 3000);
-          }
-        }
-      })
+      //提示上传成功
+      self.handleSuccess()
+      setTimeout(() => {
+        wx.navigateBack({
+          delta: 1
+        });
+      }, 3000);
     }
     this.setData({
       isSubmit: true,
@@ -127,7 +97,7 @@ Page({
   // 提示成功
   handleSuccess() {
     $Toast({
-      content: '作业发布成功',
+      content: '通知发布成功',
       type: 'success',
       selector: '#pop_toast'
     });
@@ -143,43 +113,6 @@ Page({
       duration: 3
     });
   },
-
-  addpicture() {
-    var self = this
-    wx.chooseImage({
-      count: 9 - self.data._picture_count,
-      sizeType: ['original', 'compressed'],
-      sourceType: ['album', 'camera'],
-      success(res) {
-        // tempFilePath可以作为img标签的src属性显示图片
-        const tempFilePaths = res.tempFilePaths
-        for (var i = 0; i < tempFilePaths.length; i++) {
-          var path = tempFilePaths[i]
-          var index = self.data._picture_label_list.length
-          var url = '_picture_label_list[' + index + ']'
-          var count = self.data._picture_count
-          var height = self.data._picture_count == 8 ? 90 : (Math.floor((count + 1) / 3) + 1) * 30
-          count++
-          self.setData({
-            [url]: path,
-            _picture_count: count,
-            _picture_height: height,
-          })
-        }
-
-      }
-    })
-  },
-
-  PreviewImage(e) {
-    var self = this
-    var current = e.target.dataset.src;
-    wx.previewImage({
-      current: current, // 当前显示图片的http链接
-      urls: self.data._picture_label_list // 需要预览的图片http链接列表
-    })
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
