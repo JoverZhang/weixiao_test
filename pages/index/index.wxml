@@ -1,21 +1,22 @@
 <!-- pages/helloworld.wxml -->
 <view class="ballEnd" hover-class="none" hover-stop-propagation="false" hidden="{{_plane_miss==2?'':'1'}}" bindtap="plane"></view>
-<swiper indicator-dots="{{indicatorDots}}" current="{{swiperCurrent}}" bindchange="listenSwiper" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <!-- 首页 -->
-  <swiper-item>
-    <view class="home" hover-class="none" hover-stop-propagation="false" hidden="{{hideHome}}">
-      <!-- 头部 -->
-      <view class="header">
-        <view class="option">
-          <view class="o1 {{_this==1?'inthis':''}}" data-num="1" bindtap="changepages">作业</view>
-          <view class="o2 {{_this==2?'inthis':''}}" data-num="2" bindtap="changepages">留言</view>
-          <view class="o3 {{_this==3?'inthis':''}}" data-num="3" bindtap="changepages">通知</view>
-        </view>
-      </view>
-      <!-- 作业 -->
-      <view class="tcontent work" hidden="{{_this==1?'':'1'}}">
+<!-- 首页 -->
+<view class="home" hover-class="none" hover-stop-propagation="false" hidden="{{current == 'homepage'? '':'1'}}">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="option">
+      <view class="o1 {{_this==0?'inthis':''}}" data-num="0" bindtap="changepages">作业</view>
+      <view class="o2 {{_this==1?'inthis':''}}" data-num="1" bindtap="changepages">留言</view>
+      <view class="o3 {{_this==2?'inthis':''}}" data-num="2" bindtap="changepages">通知</view>
+    </view>
+  </view>
+  <!-- 作业 -->
+  <swiper indicator-dots="{{indicatorDots}}" current="{{swiperCurrent}}" bindchange="listenSwiper" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <swiper-item>
+      <view class="tcontent work" hidden="">
         <scroll-view class="wre_tipwindow work_tipwindow" scroll-y="true" scroll-with-animation="" enable-back-to-top="true">
           <block wx:for="11111" wx:key="">
+            <!-- work content -->
             <view class="item" hover-class="none" hover-stop-propagation="false">
               <view class="time" hover-class="none" hover-stop-propagation="false">00:00</view>
               <view class="content" hover-class="none" hover-stop-propagation="false" bindtap="toWorkDetail">
@@ -34,10 +35,13 @@
           </block>
         </scroll-view>
       </view>
+    </swiper-item>
+    <swiper-item>
       <!-- 留言 -->
-      <view class="tcontent message" hidden="{{_this==2?'':'1'}}">
+      <view class="tcontent message" hidden="">
         <scroll-view class="mre_tipwindow message_tipwindow" scroll-y="true" scroll-with-animation="" enable-back-to-top="true">
           <block wx:for="11111" wx:key="">
+            <!-- message content -->
             <view class="messageItem" hover-class="none" hover-stop-propagation="false" bindtap="{{closeMessageComment}}">
               <view class="senderName" hover-class="none" hover-stop-propagation="false">欧阳老师</view>
               <view class="content" hover-class="none" hover-stop-propagation="false">
@@ -46,19 +50,22 @@
               <text class="time" selectable="false" space="false" decode="false">00:00</text>
               <i-icon type="brush" size="28" color="#80848f" data-num="{{index}}" hover-stop-propagation="false" bindtap="openComment" />
             </view>
-                <block wx:if="{{showMessageComment==index}}">
-                  <form class="messageSubmit" bindsubmit="messageCommentSubmit" hidden="">
-                    <textarea class="comment" auto-focus="ture" name="content" show-confirm-bar="" placeholder="请输入留言内容" maxlength="-1"></textarea>
-                    <button class="submit" form-type="submit">发送</button>
-                  </form>
-                </block>
+            <block wx:if="{{showMessageComment==index}}">
+              <form class="messageSubmit" bindsubmit="messageCommentSubmit" hidden="">
+                <textarea class="comment" auto-focus="ture" name="content" show-confirm-bar="" placeholder="请输入留言内容" maxlength="-1"></textarea>
+                <button class="submit" form-type="submit">发送</button>
+              </form>
+            </block>
           </block>
         </scroll-view>
       </view>
+    </swiper-item>
+    <swiper-item>
       <!-- 通知 -->
-      <view class="tcontent notice" hidden="{{_this==3?'':'1'}}">
+      <view class="tcontent notice" hidden="">
         <scroll-view class="nre_tipwindow notice_tipwindow" scroll-y="true" scroll-with-animation="" enable-back-to-top="true">
           <block wx:for="1111111111" wx:key="">
+            <!-- notice content -->
             <view class="nre_tips" hover-class="none" hover-stop-propagation="false" bindtap="toNoticeDetail">
               <view class="nre_tips_logo" hover-class="none" hover-stop-propagation="false"></view>
               <view class="nre_tips_info" hover-class="none" hover-stop-propagation="false">
@@ -76,39 +83,36 @@
           </block>
         </scroll-view>
       </view>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 我的 -->
+<view class="myInfo" hover-class="none" hover-stop-propagation="false" hidden="{{current == 'homepage'? '1':''}}">
+  <i-modal visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
+    <view>确定退出“{{classItemList[popNum].classItemName}}”吗？</view>
+  </i-modal>
+  <view class="info" hover-class="none" hover-stop-propagation="false" bindtap="toModifyMyInfo">
+    <view class="head">
+      <open-data type="userAvatarUrl"></open-data>
     </view>
-  </swiper-item>
-  <!-- 我的 -->
-  <swiper-item>
-    <view class="myInfo" hover-class="none" hover-stop-propagation="false" hidden="{{hideMyInfo}}">
-      <i-modal visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
-        <view>确定退出“{{classItemList[popNum].classItemName}}”吗？</view>
-      </i-modal>
-      <view class="info" hover-class="none" hover-stop-propagation="false" bindtap="toModifyMyInfo">
-        <view class="head">
-          <open-data type="userAvatarUrl"></open-data>
-        </view>
-        <view class="name">
-          <open-data type="userNickName"></open-data>
-        </view>
-        <view class="id">微校号：abc123</view>
-      </view>
-      <i-collapse-item class="classBanner" title="已加入班级" name="name1">
-        <view slot="content" class="classBannerList">
-          <block wx:for="{{classItemList}}" wx:key="#">
-            <view class="classItem" data-num="{{index}}" bindlongpress="handleOpen">
-              {{item.classItemName}}
-            </view>
-          </block>
-        </view>
-      </i-collapse-item>
+    <view class="name">
+      <open-data type="userNickName"></open-data>
     </view>
-  </swiper-item>
-</swiper>
+    <view class="id">微校号：abc123</view>
+  </view>
+  <i-collapse-item class="classBanner" title="已加入班级" name="name1">
+    <view slot="content" class="classBannerList">
+      <block wx:for="{{classItemList}}" wx:key="#">
+        <view class="classItem" data-num="{{index}}" bindlongpress="handleOpen">
+          {{item.classItemName}}
+        </view>
+      </block>
+    </view>
+  </i-collapse-item>
+</view>
 <!-- 底部导航 -->
 <i-tab-bar class="footer" current="{{ current }}" color="#529eea" bindchange="handleChange" fixed="true">
   <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
-  <!-- <view class="f_plane" hover-class="none" hover-stop-propagation="false" bindtap="to_assignments" bindtouchstart="plane_miss_begin" bindtouchend="plane_miss_end"> -->
   <view class="f_plane" hover-class="none" hover-stop-propagation="false" bindtap="plane">
     <image animation="{{animationData0}}" class="f_plane_icon" src="../../images/myapp/m-home{{_plane_miss}}.png" />
   </view>

@@ -13,16 +13,14 @@ Page({
     autoplay: false,
     interval: 5000,
     duration: 300,
-    swiperCurrent: 0,
+    swiperCurrent: 0,//home子页号
     //message
     closeMessageComment: '',
     showMessageComment: -1,
     //footer
     current: 'homepage',
-    hideHome: '',
-    hideMyInfo: '',
     //首页
-    _this: 2,
+    _this: 0,//home导航号
     _plane_miss: 1,
     //我的
     visible: false,
@@ -44,43 +42,23 @@ Page({
     animationData3: {},
   },
 
-
-
-  //主页面切换
+  //home页面切换
   listenSwiper(e) {
     var self = this
-    if (e.detail.current == 0)
-      self.setData({
-        current: 'homepage',
-      })
-    else if (e.detail.current == 1)
-      self.setData({
-        current: 'mine',
-      })
-  },
-
-  toHome() {
-    this.setData({
-      swiperCurrent: 0
+    self.setData({
+      _this: e.detail.current
     })
   },
 
-  toMyInfo() {
-    this.setData({
-      swiperCurrent: 1
-    })
-  },
-
-
-  //首页主页面切换
   changepages: function (e) {
     this.setData({
-      _this: e.target.dataset.num
+      _this: e.target.dataset.num,
+      swiperCurrent: e.target.dataset.num
     })
   },
 
   //message
-  openComment(e){
+  openComment(e) {
     var self = this
     var num = e.target.dataset.num
     this.setData({
@@ -90,7 +68,7 @@ Page({
     console.log(self.data.showMessageComment)
   },
 
-  closeComment(){
+  closeComment() {
     var self = this
     self.setData({
       showMessageComment: -1,
@@ -99,7 +77,7 @@ Page({
     console.log(self.data.showMessageComment)
   },
 
-  messageCommentSubmit(e){
+  messageCommentSubmit(e) {
     var self = this
 
     //结束
@@ -151,13 +129,11 @@ Page({
   //footer
   handleChange({ detail }) {
     var self = this
-    if (self.data.inPlane){
+    //plane
+    if (self.data.inPlane) {
       self.plane()
     }
-    if (detail.key == 'homepage')
-      self.toHome()
-    else
-      self.toMyInfo()
+    //main
     self.setData({
       current: detail.key
     })
@@ -217,14 +193,14 @@ Page({
 
   plane(e) {
     var self = this
-    if(!self.data.inPlane){
+    if (!self.data.inPlane) {
       self.plane_miss_begin()
       var x = self.data.imageWidth / 750 * 220
       // var y = self.data.imageWidth / 750 * 15
       self.animation0.scale(1.1).rotate(396).step()
-      self.animation1.bottom(220/1.5 + 'rpx').scale(1).opacity(1).rotate(0).translateX(-x/1.5).step()
+      self.animation1.bottom(220 / 1.5 + 'rpx').scale(1).opacity(1).rotate(0).translateX(-x / 1.5).step()
       self.animation2.bottom(220 + 'rpx').scale(1).opacity(1).rotate(0).step()
-      self.animation3.bottom(220/1.5 + 'rpx').scale(1).opacity(1).rotate(0).translateX(x/1.5).step()
+      self.animation3.bottom(220 / 1.5 + 'rpx').scale(1).opacity(1).rotate(0).translateX(x / 1.5).step()
       self.setData({
         //输出动画
         animationData0: this.animation0.export(),
@@ -234,7 +210,7 @@ Page({
         inPlane: true
       })
     }
-    else{
+    else {
       self.initAnimation()
       self.setData({
         inPlane: false
