@@ -1,26 +1,29 @@
 /* pages/helloworld.wxss */
 
 swiper{
-  height: 100vh;
+  height: calc(100vh - 85rpx);
   width: 100vw;
 }
 
 .home .header{
   height: 80rpx;
-  width: 100%;
+  width: 100vw;
   background-color: #fff;
   border-bottom: 1px solid #ebebeb;
 }
 .home .header .option{
-  width: 450rpx;
-  margin: 0 auto;
+  /* width: 450rpx; */
+  width: 60vw;
+  margin: 0 20vw;
   display: block;
 }
 
 .home .header .option view{
-  padding: 0 30rpx;
+  /* padding: 0 30rpx; */
   display: inline-block;
-  width: 90rpx;
+  /* width: 90rpx; */
+  width: 12vw;
+  padding: 0 4vw;
   /* color: #bfbfbf; */
   color: #ebebeb;
   font-size: 40rpx;
@@ -34,15 +37,10 @@ swiper{
   color: #529eea;
 }
 
-.home .tcontent .option .inthis{
-  color: #616571;
-}
-
-
 /* 作业receive */
 .home .work_tipwindow{
   height: calc(100vh - 156rpx);
-  width: 100%;
+  width: 100vw;
   background-color: #ebebeb;
 }
 
@@ -75,8 +73,8 @@ swiper{
 .home .work .wre_tipwindow .item .content{
   position: relative;
   top: 3vw;
-  padding: 7vw 4vw;
-  width: 86vw;
+  padding: 7vw 5vw;
+  width: 84vw;
   height: auto;
   font-size: 4.1vw;
   text-align: left;
@@ -98,18 +96,22 @@ swiper{
 
 .home .work .wre_tipwindow .item .content .subjectName{
   position: relative;
-  float: left;
-  width: 86vw;
+  /* float: left; */
+  width: 60vw;
+  margin: 0 auto;
   top: -2vw;
   font-weight: bold;
   text-align: center;
   margin-bottom: 3vw;
+  display: block;
 }
 
 .home .work .wre_tipwindow .item .content text{
   position: relative;
+  width: 84vw;
   top: -1vw;
-  font-size: 4.09vw;
+  font-size: 3.9vw;
+  display: block;
 }
 
 .home .work .wre_tipwindow .item .content .detail{
@@ -134,7 +136,7 @@ swiper{
 /* 留言receive */
 .home .message_tipwindow{
   height: calc(100vh - 156rpx);
-  width: 100%;
+  width: 100vw;
 }
 .home .message_tipwindow .messageItem{
   width: 100vw;
@@ -212,13 +214,13 @@ swiper{
 /* 通知receive */
 .home .notice_tipwindow{
   height: calc(100vh - 156rpx);
-  width: 100%;
+  width: 100vw;
   /* background-color: red; */
 }
 
 .home .tcontent .nre_tipwindow .nre_tips{
   height: 130rpx;
-  width: 100%;
+  width: 100vw;
   background-color: white;
   border-bottom: 2rpx solid #f5f5f5;
   box-sizing: border-box;
@@ -234,16 +236,18 @@ swiper{
   margin: 20rpx;
   height: 90rpx;
   width: 90rpx;
-  background-color: #5c5d5f;
+  /* background-color: #5c5d5f; */
   border-radius: 80rpx;
 }
-/*  */
-.home .tcontent .nre_tipwindow .nre_tips .nre_tips_info .nre_tips_logo{
-  /* left: 0rpx; */
-  /* float: left; */
-  margin: 20rpx;
-  width: 90rpx;
+
+.home .tcontent .nre_tipwindow .nre_tips .notice{
+  background-color: #529eea;
 }
+
+.home .tcontent .nre_tipwindow .nre_tips .task{
+  background-color: #555;
+}
+
 
 .home .tcontent .nre_tipwindow .nre_tips .nre_tips_info{
   position: relative;
@@ -261,6 +265,7 @@ swiper{
   color: #323335;
   font-size: 32rpx;
   font-weight: bold;
+  overflow: hidden;
   /* line-height: 100rpx; */
   /* background-color: red; */
   display: block;
@@ -287,9 +292,11 @@ swiper{
   font-size: 24rpx;
   /* font-weight: bold; */
   line-height: 50rpx;
+  overflow: hidden;
   /* background-color: blue; */
   display: block;
 }
+
 
 
 

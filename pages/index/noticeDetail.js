@@ -1,14 +1,13 @@
 // pages/index/noticeDetail.js
-
-
-
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    noticeSummaryList: app.globalData.noticeSummaryList,
+    noticeSummary: {},
   },
 
 
@@ -18,11 +17,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var app = getApp()
-    // console.log(app.globalData.classItemList)
-      wx.setNavigationBarTitle({
-        title: app.globalData.classItemList
-      })
+    let self = this
+    //get noticeId
+    let num = JSON.parse(options.current)
+    //get noticeSummaryList[noticeId]
+    var noticeSummaryList = this.data.noticeSummaryList
+    let i = 0
+    for (; i < noticeSummaryList.length; i++)
+      if (noticeSummaryList[i].noticeId == num)
+        break;
+    //set title
+    self.setData({
+      noticeSummary: noticeSummaryList[i]
+    })
+    wx.setNavigationBarTitle({
+      title: self.data.noticeSummary.noticeClass
+    })
   },
 
   /**

@@ -1,18 +1,36 @@
 // pages/index/workDetail.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    workSummaryList: app.globalData.workSummaryList,
+    workSummary: {},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let self = this
+    //get workId
+    let num = JSON.parse(options.current)
+    //get workSummaryList[workId]
+    var workSummaryList = this.data.workSummaryList
+    let i = 0
+    for (; i < workSummaryList.length; i++)
+      if (workSummaryList[i].workId == num)
+        break;
+    //set title
+    self.setData({
+      workSummary: workSummaryList[i]
+    })
+    let teacherName = self.data.workSummary.teacherName + '老师'
+    wx.setNavigationBarTitle({
+      title: teacherName
+    })
   },
 
   /**

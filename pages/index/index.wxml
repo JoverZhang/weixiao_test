@@ -1,7 +1,7 @@
 <!-- pages/helloworld.wxml -->
-<view class="ballEnd" hover-class="none" hover-stop-propagation="false" hidden="{{_plane_miss==2?'':'1'}}" bindtap="plane"></view>
+<view class="ballEnd" hidden="{{_plane_miss==2?'':'1'}}" bindtap="plane"></view>
 <!-- 首页 -->
-<view class="home" hover-class="none" hover-stop-propagation="false" hidden="{{current == 'homepage'? '':'1'}}">
+<view class="home" hidden="{{current == 'homepage'? '':'1'}}">
   <!-- 头部 -->
   <view class="header">
     <view class="option">
@@ -15,20 +15,16 @@
     <swiper-item>
       <view class="tcontent work" hidden="">
         <scroll-view class="wre_tipwindow work_tipwindow" scroll-y="true" scroll-with-animation="" enable-back-to-top="true">
-          <block wx:for="11111" wx:key="">
+          <block wx:for="{{workSummaryList}}" wx:key="" wx:for-item="workSummary">
             <!-- work content -->
-            <view class="item" hover-class="none" hover-stop-propagation="false">
-              <view class="time" hover-class="none" hover-stop-propagation="false">00:00</view>
-              <view class="content" hover-class="none" hover-stop-propagation="false" bindtap="toWorkDetail">
-                <view class="teacherName" hover-class="none" hover-stop-propagation="false">
-                  欧阳老师
-                </view>
-                <view class="subjectName" hover-class="none" hover-stop-propagation="false">
-                  语文
-                </view>
-                <text>三年级二班作业:\n就测试随便发发，其实也没什么特别重要的东西西西西。</text>
-                <view class="detail" hover-class="none" hover-stop-propagation="false">
-                  <text>详细信息</text>
+            <view class="item">
+              <view class="time">{{workSummary.time}}</view>
+              <view  class="content" data-num="{{workSummary.workId}}" bindtap="toWorkDetail">
+                <view class="teacherName" data-num="{{workSummary.workId}}">{{workSummary.teacherName}}老师</view>
+                <view class="subjectName" data-num="{{workSummary.workId}}">{{workSummary.ClassName}}</view>
+                <text data-num="{{workSummary.workId}}">{{workSummary.content}}</text>
+                <view class="detail" data-num="{{workSummary.workId}}">
+                  <text data-num="{{workSummary.workId}}">详细信息</text>
                 </view>
               </view>
             </view>
@@ -40,14 +36,12 @@
       <!-- 留言 -->
       <view class="tcontent message" hidden="">
         <scroll-view class="mre_tipwindow message_tipwindow" scroll-y="true" scroll-with-animation="" enable-back-to-top="true">
-          <block wx:for="11111" wx:key="">
+          <block wx:for="{{messageSummaryList}}" wx:key="" wx:for-item="messageSummary">
             <!-- message content -->
-            <view class="messageItem" hover-class="none" hover-stop-propagation="false" bindtap="{{closeMessageComment}}">
-              <view class="senderName" hover-class="none" hover-stop-propagation="false">欧阳老师</view>
-              <view class="content" hover-class="none" hover-stop-propagation="false">
-                就测试留言随便发发，其实也没什么特别重要的东西西西西。
-              </view>
-              <text class="time" selectable="false" space="false" decode="false">00:00</text>
+            <view class="messageItem" bindtap="{{closeMessageComment}}">
+              <view class="senderName">{{messageSummary.teacherName}}老师</view>
+              <view class="content">{{messageSummary.content}}</view>
+              <text class="time" selectable="false" space="false" decode="false">{{messageSummary.time}}</text>
               <i-icon type="brush" size="28" color="#80848f" data-num="{{index}}" hover-stop-propagation="false" bindtap="openComment" />
             </view>
             <block wx:if="{{showMessageComment==index}}">
@@ -64,20 +58,14 @@
       <!-- 通知 -->
       <view class="tcontent notice" hidden="">
         <scroll-view class="nre_tipwindow notice_tipwindow" scroll-y="true" scroll-with-animation="" enable-back-to-top="true">
-          <block wx:for="1111111111" wx:key="">
+          <block wx:for="{{noticeSummaryList}}" wx:key="" wx:for-item="noticeSummary">
             <!-- notice content -->
-            <view class="nre_tips" hover-class="none" hover-stop-propagation="false" bindtap="toNoticeDetail">
-              <view class="nre_tips_logo" hover-class="none" hover-stop-propagation="false"></view>
-              <view class="nre_tips_info" hover-class="none" hover-stop-propagation="false">
-                <view class="nre_tips_name" hover-class="none" hover-stop-propagation="false">
-                  三年级二班任务
-                </view>
-                <view class="nre_tips_time" hover-class="none" hover-stop-propagation="false">
-                  09-16
-                </view>
-                <view class="nre_tips_summary" hover-class="none" hover-stop-propagation="false">
-                  有人提交新任务
-                </view>
+            <view class="nre_tips" data-num="{{noticeSummary.noticeId}}" bindtap="toNoticeDetail">
+              <view class="nre_tips_logo {{noticeSummary.noticeType == '通知' ? 'notice' : noticeSummary.noticeType == '任务' ? 'task' : ''}}" data-num="{{noticeSummary.noticeId}}"></view>
+              <view class="nre_tips_info" data-num="{{noticeSummary.noticeId}}">
+                <view class="nre_tips_name" data-num="{{noticeSummary.noticeId}}">{{noticeSummary.noticeClass}}</view>
+                <view class="nre_tips_time" data-num="{{noticeSummary.noticeId}}">{{noticeSummary.time}}</view>
+                <view class="nre_tips_summary" data-num="{{noticeSummary.noticeId}}">{{noticeSummary.noticeSummary}}</view>
               </view>
             </view>
           </block>
@@ -87,11 +75,11 @@
   </swiper>
 </view>
 <!-- 我的 -->
-<view class="myInfo" hover-class="none" hover-stop-propagation="false" hidden="{{current == 'homepage'? '1':''}}">
+<view class="myInfo" hidden="{{current == 'homepage'? '1':''}}">
   <i-modal visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
     <view>确定退出“{{classItemList[popNum].classItemName}}”吗？</view>
   </i-modal>
-  <view class="info" hover-class="none" hover-stop-propagation="false" bindtap="toModifyMyInfo">
+  <view class="info" bindtap="toModifyMyInfo">
     <view class="head">
       <open-data type="userAvatarUrl"></open-data>
     </view>
@@ -113,17 +101,11 @@
 <!-- 底部导航 -->
 <i-tab-bar class="footer" current="{{ current }}" color="#529eea" bindchange="handleChange" fixed="true">
   <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
-  <view class="f_plane" hover-class="none" hover-stop-propagation="false" bindtap="plane">
+  <view class="f_plane" bindtap="plane">
     <image animation="{{animationData0}}" class="f_plane_icon" src="../../images/myapp/m-home{{_plane_miss}}.png" />
   </view>
   <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" title="我的"></i-tab-bar-item>
-  <view animation="{{animationData1}}" class="ball" hover-class="none" hover-stop-propagation="false" bindtap="to_assignments">
-    作业
-  </view>
-  <view animation="{{animationData2}}" class="ball" hover-class="none" hover-stop-propagation="false" bindtap="to_messages">
-    留言
-  </view>
-  <view animation="{{animationData3}}" class="ball" hover-class="none" hover-stop-propagation="false" bindtap="to_notices">
-    通知
-  </view>
+  <view animation="{{animationData1}}" class="ball" bindtap="to_assignments">作业</view>
+  <view animation="{{animationData2}}" class="ball" bindtap="to_messages">留言</view>
+  <view animation="{{animationData3}}" class="ball" bindtap="to_notices">通知</view>
 </i-tab-bar>

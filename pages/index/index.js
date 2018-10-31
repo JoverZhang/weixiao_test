@@ -1,4 +1,5 @@
 // pages/helloworld.js
+var app = getApp()
 
 Page({
 
@@ -13,26 +14,28 @@ Page({
     autoplay: false,
     interval: 5000,
     duration: 300,
-    swiperCurrent: 0,//home子页号
+    swiperCurrent: 2,//home子页号
     //message
     closeMessageComment: '',
     showMessageComment: -1,
     //footer
     current: 'homepage',
     //首页
-    _this: 0,//home导航号
+    _this: 2,//home导航号
     _plane_miss: 1,
     //我的
     visible: false,
     popNum: 0,
-    classItemList: [
-      {
-        classItemName: '三年级二班',
-      },
-      {
-        classItemName: '三年级三班',
-      },
-    ],
+    //index summary
+    workSummaryList: app.globalData.workSummaryList.reverse(),
+    messageSummaryList: app.globalData.messageSummaryList.reverse(),
+    noticeSummaryList: app.globalData.noticeSummaryList.reverse(),
+
+    classItemList: [{
+      classItemName: '三年级二班',
+    }, {
+      classItemName: '三年级三班',
+    }],
     //plane
     inPlane: false,
     // planBindTouch: 'plane_miss_begin',
@@ -150,6 +153,7 @@ Page({
     });
   },
 
+  //assignments
   to_assignments: function (e) {
     var self = this
     self.plane()
@@ -174,19 +178,20 @@ Page({
     });
   },
 
-  toWorkDetail() {
+  //Detail
+  toWorkDetail(e) {
     wx.navigateTo({
-      url: "workDetail"
+      url: "workDetail?current=" + JSON.stringify(e.target.dataset.num)
     });
   },
 
-  toNoticeDetail() {
-    var self = this
-    var app = getApp()
+  toNoticeDetail(e) {
+    // var self = this
+    // var app = getApp()
     // console.log(app)
-    app.getDataClassItemList(self.data.classItemList[0].classItemName)
+    // app.getDataClassItemList(self.data.classItemList[0].classItemName)
     wx.navigateTo({
-      url: "noticeDetail"
+      url: "noticeDetail?current=" + JSON.stringify(e.target.dataset.num)
     });
     // console.log(app.globalData.classItemList)
   },
