@@ -38,32 +38,57 @@ App({
       'noticeId': 1,
       'noticeClass': '三年级二班',
       'noticeType': '任务',
-      'noticeSummary': '三年级二班发布新作业',
-      'time': '00:00'
+      'noticeContents': [{
+        'noticeContent': '三年级二班发布新作业',
+        'time': '09-01 00:00'
+      }, {
+        'noticeContent': '三年级二班发布新作业',
+        'time': '09-02 00:00'
+      }, {
+        'noticeContent': '三年级二班发布新作业',
+        'time': '09-03 00:00'
+      }, {
+        'noticeContent': '三年级二班发布新作业',
+        'time': '09-04 00:00'
+      }, {
+        'noticeContent': '三年级二班发布新作业',
+        'time': '09-05 00:00'
+      }, {
+        'noticeContent': '三年级二班发布新作业',
+        'time': '00:00S'
+      }]
     }, {
       'noticeId': 2,
       'noticeClass': '三年级三班',
       'noticeType': '任务',
-      'noticeSummary': '三年级三班发布新作业',
-      'time': '00:01'
+      'noticeContents': [{
+        'noticeContent': '三年级三班发布新作业',
+        'time': '00:01'
+      }]
     }, {
       'noticeId': 3,
       'noticeClass': '三年级四班',
       'noticeType': '任务',
-      'noticeSummary': '三年级四班发布新作业',
-      'time': '00:02'
+      'noticeContents': [{
+        'noticeContent': '三年级四班发布新作业',
+        'time': '00:01'
+      }]
     }, {
       'noticeId': 4,
       'noticeClass': '三年级二班',
       'noticeType': '通知',
-      'noticeSummary': '放假通知,十月份国庆放假7天，10月1日到10月7日，10月8日8点准时回校报到。',
-      'time': '00:05'
+      'noticeContents': [{
+        'noticeContent': '放假通知,十月份国庆放假7天，10月1日到10月7日，10月8日8点准时回校报到。',
+        'time': '00:05'
+      }]
     }, {
       'noticeId': 5,
       'noticeClass': '三年级三班',
       'noticeType': '通知',
-      'noticeSummary': '放假通知',
-      'time': '00:05'
+      'noticeContents': [{
+        'noticeContent': '放假通知',
+        'time': '00:05'
+      }]
     }],
     // //assignments
     // classItemList: [],

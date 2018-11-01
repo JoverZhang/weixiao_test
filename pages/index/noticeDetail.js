@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    scrollTop: 0,
     noticeSummaryList: app.globalData.noticeSummaryList,
     noticeSummary: {},
   },
@@ -28,7 +29,8 @@ Page({
         break;
     //set title
     self.setData({
-      noticeSummary: noticeSummaryList[i]
+      noticeSummary: noticeSummaryList[i],
+      scrollTop: 1000000000,
     })
     wx.setNavigationBarTitle({
       title: self.data.noticeSummary.noticeClass

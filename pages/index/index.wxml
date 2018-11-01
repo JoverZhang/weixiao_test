@@ -64,8 +64,8 @@
               <view class="nre_tips_logo {{noticeSummary.noticeType == '通知' ? 'notice' : noticeSummary.noticeType == '任务' ? 'task' : ''}}" data-num="{{noticeSummary.noticeId}}"></view>
               <view class="nre_tips_info" data-num="{{noticeSummary.noticeId}}">
                 <view class="nre_tips_name" data-num="{{noticeSummary.noticeId}}">{{noticeSummary.noticeClass}}</view>
-                <view class="nre_tips_time" data-num="{{noticeSummary.noticeId}}">{{noticeSummary.time}}</view>
-                <view class="nre_tips_summary" data-num="{{noticeSummary.noticeId}}">{{noticeSummary.noticeSummary}}</view>
+                <view class="nre_tips_time" data-num="{{noticeSummary.noticeId}}">{{noticeSummary.noticeContents[0].time}}</view>
+                <view class="nre_tips_summary" data-num="{{noticeSummary.noticeId}}">{{noticeSummary.noticeContents[0].noticeContent}}</view>
               </view>
             </view>
           </block>
