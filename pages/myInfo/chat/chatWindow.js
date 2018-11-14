@@ -1,28 +1,27 @@
-// pages/myInfo/myInfo.js
-var app=getApp();
+// pages/myInfo/chat/chatWindow.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    username: ''
-  },
-
-  toMyName() {
-    wx.navigateTo({
-      url: "../myInfo/myName"
-    });
+    optionnal: {},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    that.setData({
-      username: app.globalData.username
+    let self = this
+    let optionnal = JSON.parse(options.current)
+    self.setData({
+      optionnal: optionnal
     })
+    // console.log(self.data.optionnal)
+    let title = optionnal['parentName'] + '(' + optionnal['className'] + ')'
+    wx.setNavigationBarTitle({
+      title: title,
+    });
   },
 
   /**

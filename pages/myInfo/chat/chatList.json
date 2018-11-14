@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "i-index": "../../../components/iview/dist/index/index",
+        "i-index-item": "../../../components/iview/dist/index-item/index"
+    }
+}

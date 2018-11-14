@@ -1,0 +1,5 @@
+<!--pages/myInfo/chat/chatWindow.wxml-->
+<view class="submitContent" hover-class="none" hover-stop-propagation="false">
+    <input class="content" adjust-position type="text"/>
+    <button class="submit">发送</button>
+</view>

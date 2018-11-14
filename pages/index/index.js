@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    username: app.globalData.username,
     //window
     imageWidth: 0,
     //swiper
@@ -19,7 +20,8 @@ Page({
     closeMessageComment: '',
     showMessageComment: -1,
     //footer
-    current: 'homepage',
+    // current: 'homepage',
+    current: 'mine',
     //首页
     _this: 2,//home导航号
     _plane_miss: 1,
@@ -31,11 +33,7 @@ Page({
     messageSummaryList: app.globalData.messageSummaryList.reverse(),
     noticeSummaryList: app.globalData.noticeSummaryList.reverse(),
 
-    classItemList: [{
-      classItemName: '三年级二班',
-    }, {
-      classItemName: '三年级三班',
-    }],
+    classItemList: app.globalData.chatClassList,
     //plane
     inPlane: false,
     // planBindTouch: 'plane_miss_begin',
@@ -94,18 +92,21 @@ Page({
     });
   },
 
-  deleteClassItem(e) {
-    var self = this
-    var num = e
-    var oldClassItemList = self.data.classItemList
-    var newClassItemList = []
-    // console.log(num)
-    for (var i = 0; i < oldClassItemList.length; i++) {
-      if (num == i) continue;
-      newClassItemList[newClassItemList.length] = oldClassItemList[i]
+  deleteClassItem(num) {
+    let self = this
+
+    //后端代码实现 -- 删除 chatClassList
+    let id = num
+    let classList = self.data.classItemList
+    let newClassList = []
+    for (let i = 0, len = classList.length; i < len; i++) {
+      if (classList[i]['classId'] != id)
+        newClassList.push(classList[i])
     }
+    //////////////////////////////////
+
     self.setData({
-      classItemList: newClassItemList
+      classItemList: newClassList
     })
     self.handleClose()
   },
@@ -129,6 +130,10 @@ Page({
     });
   },
 
+  joinClass: function () {
+    console.log('joinClass')
+  },
+
   //footer
   handleChange({ detail }) {
     var self = this
@@ -147,6 +152,7 @@ Page({
       _plane_miss: 2
     });
   },
+
   plane_miss_end: function (e) {
     this.setData({
       _plane_miss: 1
@@ -186,14 +192,15 @@ Page({
   },
 
   toNoticeDetail(e) {
-    // var self = this
-    // var app = getApp()
-    // console.log(app)
-    // app.getDataClassItemList(self.data.classItemList[0].classItemName)
     wx.navigateTo({
       url: "noticeDetail?current=" + JSON.stringify(e.target.dataset.num)
     });
-    // console.log(app.globalData.classItemList)
+  },
+
+  toChatList(e) {
+    wx.navigateTo({
+      url: "../myInfo/chat/chatList?current=" + JSON.stringify(e.target.dataset.num)
+    })
   },
 
   plane(e) {
@@ -282,6 +289,21 @@ Page({
       imageWidth: wx.getSystemInfoSync().windowWidth
     })
     self.initAnimation()
+
+    //获取已加入班级的值
+    // var that = this;
+    // var id = app.globalData.userId;
+    // wx.request({
+    //   url: app.globalData.httpsUrl + '/group',
+    //   header: { 'content-type': 'application/x-www-form-urlencoded' },
+    //   data: { user_id: id, 'type': 'assignments' },
+    //   method: 'POST',
+    //   success: function (res) {
+    //     that.setData({
+    //       classItemList: res.data
+    //     })
+    //   }
+    // })
   },
 
   /**
@@ -295,7 +317,41 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    // 留言板
+    wx.request({
+      url: that.data.https + '/message/show',
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {},
+      success: function (res) {
+        that.setData({
+          messageList: res.data
+        })
+      }
+    })
+    //作业
+    setTimeout(function () {
+      var userId = app.globalData.userId;
+      var power = app.globalData.power;
+      wx.request({
+        url: that.data.https + '/assignment/show',
+        method: 'POST',
+        header: { 'content-type': 'application/x-www-form-urlencoded' },
+        data: {
+          user_id: userId,
+          power: power
+        },
+        success: function (res) {
+          that.setData({
+            assignmentList: res.data
+          })
+        }
+      })
+      that.setData({
+        username: app.globalData.username
+      })
+    }, 2500)
   },
 
   /**

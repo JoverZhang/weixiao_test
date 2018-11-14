@@ -11,7 +11,7 @@
     <view class="myName" hover-class="none" hover-stop-propagation="false">
         <view class="fName" hover-class="none" hover-stop-propagation="false">昵称</view>
         <view class="pName" hover-class="none" hover-stop-propagation="false">
-            <open-data type="userNickName"></open-data>
+            {{username}}
         </view>
     </view>
 </view>

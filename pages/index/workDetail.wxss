@@ -1,7 +1,7 @@
 /* pages/index/workDetail.wxss */
 .workDetail{
     width: 90vw;
-    height: auto;
+    height: 100%;
     margin: 6vw 5vw;
 }
 
@@ -40,9 +40,157 @@
 }
 
 .workDetail .time{
+    z-index: -1;
+    float: left;
     position: relative;
+    height: 4vw;
     margin: 4vw 1vw;
     font-size: 3vw;
     color: #a1a1a1;
     display: block;
+}
+
+.rate{
+    position: relative;
+    float: left;
+    margin-bottom: 95rpx;
+    width: 100vw;
+    height: 200rpx;
+    background-color: #f5f5f5;
+}
+
+.rate text{
+    position: relative;
+    float: left;
+    top: 10rpx;
+    width: 100vw;
+    height: 50rpx;
+    text-align: center;
+    font-size: 40rpx;
+    line-height: 50rpx;
+}
+
+.rate .starRate{
+    position: relative;
+    float: left;
+    top: 20rpx;
+    width: 100vw;
+    height: 40px;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+.rate .submit_button{
+    position: fixed;
+    bottom: 0;
+    float: left;
+    height: 100rpx;
+    width: 100vw;
+    margin: 0;
+    background-color: #529eea;
+    border: none;
+    border-radius: 0;
+}
+
+.rate .submit_buttonActice{
+    background-color: rgb(211, 211, 211);
+}
+
+.rate .studentList{
+    z-index: 2;
+    position: relative;
+    float: left;
+    top: 70rpx;
+    width: 100vw;
+    margin: 0;
+    /* background-color: red; */
+}
+
+.rate .studentList .studentNavigation{
+    position: relative;
+    float: left;
+    width: 100vw;
+    height: 10vw;
+    border-bottom: 2rpx solid #f5f5f5;
+}
+
+.rate .studentList .studentNavigation .submitted{
+    position: relative;
+    float: left;
+    left: 20rpx;
+    width: 30vw;
+    height: 10vw;
+}
+
+.rate .studentList .studentNavigation text{
+    position: relative;
+    float: left;
+    width: 7.5vw;
+    font-size: 3.5vw;
+    line-height: 7vw;
+    text-align: left;
+    display: inline;
+}
+
+.rate .studentList .studentNavigation .count{
+    width: auto;
+    color: rgb(245, 166, 35);
+    margin-left: 5rpx;
+}
+
+.rate .studentList .studentNavigation .selectSubmitted{
+    position: relative;
+    margin: 2vw auto;
+    width: 200rpx;
+    height: 6vw;
+    font-size: 3.5vw;
+    line-height: 6vw;
+    background: #f5f5f5;
+    border: 2rpx solid #f5f5f5;
+    border-radius: 100rpx;
+    text-align: center;
+}
+
+.rate .studentList .studentNavigation .selected{
+    background-color: #529eea;
+}
+
+.rate .studentList .studentNavigation .call{
+    position: relative;
+    float: right;
+    height: 10vw;
+    width: 20vw;
+    font-size: 3.5vw;
+    color: #529eea;
+    text-align: center;
+    line-height: 10vw;
+}
+
+.rate .studentList .studentNavigation .call:active{
+    color: rgb(233, 233, 233);
+}
+
+.rate .studentList .studentItem{
+    position: relative;
+    float: left;
+    height: 12vw;
+    width: 100vw;
+    border-bottom: 2rpx solid #f5f5f5;
+    font-size: 4.2vw;
+    line-height: 12vw;
+}
+
+.rate .studentList .studentItem .name{
+    position: relative;
+    float: left;
+    margin-left: 3vw;
+}
+
+.rate .studentList .studentItem .judgement{
+    float: right;
+    margin-right: 3vw;
+}
+
+.rate .studentList .studentItem .judgementActive{
+    color: rgb(245, 166, 35);
 }

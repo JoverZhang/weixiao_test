@@ -31,6 +31,7 @@ Page({
       id: 3,
       name: '英语'
     }],
+    //class Name
     subjectCurrent: '',
     //choice class
     classList: [{
@@ -75,6 +76,32 @@ Page({
   formSubmit: function (e) {
     // console.log('form发生了submit事件，携带数据为：', e.detail.value);
     var self = this
+    let subjectList = self.data.subjectList
+    let classList = self.data.classList
+    let subjectCurrent = self.data.subjectCurrent
+    let classCurrent = self.data.classCurrent
+    let subjectId = 0
+    let classId = []
+    for (let i = 0, len = subjectList.length; i < len; i++)
+      if (subjectList[i]['name'] == subjectCurrent) {
+        subjectId = subjectList[i]['id']
+        break
+      }
+    for (let i = 0, len = classCurrent.length; i < len; i++) {
+      for (let j = 0, len = classList.length; j < len; j++){
+        if (classCurrent[i] == classList[j]['name']){
+          classId.push(classList[i]['id'])
+          break
+        }
+      }
+    }
+    console.log(subjectId)
+    console.log(classId)
+
+    // console.log(subjectId, classId)
+    // console.log(self.data.subjectList[0]['id'])
+
+
     let { content } = e.detail.value;
     var that = this;
     if (!content) {
@@ -200,7 +227,33 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    // var openid = getApp().globalData.openid;
+    var userId = getApp().globalData.userId;
+    // 获取作业类别
+    wx.request({
+      url: that.data.https + '/type',
+      method: 'POST',
+      data: { 'type': 'assignments' },
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: function (res) {
+        that.setData({
+          subjectList: res.data
+        })
+      }
+    })
+    //获取班级
+    wx.request({
+      url: that.data.https + '/group',
+      method: 'POST',
+      data: { user_id: userId, 'type': 'assignments' },
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: function (res) {
+        that.setData({
+          classList: res.data
+        })
+      }
+    })
   },
 
   /**

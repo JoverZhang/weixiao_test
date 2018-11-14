@@ -84,19 +84,21 @@
       <open-data type="userAvatarUrl"></open-data>
     </view>
     <view class="name">
-      <open-data type="userNickName"></open-data>
+      {{username}}
     </view>
     <view class="id">微校号：abc123</view>
   </view>
   <i-collapse-item class="classBanner" title="已加入班级" name="name1">
     <view slot="content" class="classBannerList">
-      <block wx:for="{{classItemList}}" wx:key="#">
-        <view class="classItem" data-num="{{index}}" bindlongpress="handleOpen">
-          {{item.classItemName}}
+      <block wx:for="{{classItemList}}" wx:key="#" wx:for-item="classItem">
+        <view class="classItem {{index == 0?'':'myInfoBorderTop'}}" data-num="{{classItem.classId}}" bindlongpress="handleOpen" bindtap="toChatList">
+          {{classItem.className}}
         </view>
       </block>
     </view>
   </i-collapse-item>
+  <view class="infoItem" bindtap="joinClass">加入班级</view>
+  <view class="infoItem myInfoBorderBottom">关于我们</view>
 </view>
 <!-- 底部导航 -->
 <i-tab-bar class="footer" current="{{ current }}" color="#529eea" bindchange="handleChange" fixed="true">

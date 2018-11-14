@@ -25,7 +25,7 @@
     <block wx:if="{{classCurrent.length}}">
         <text class="classTitle" selectable="false" space="false" decode="false">已选{{classCurrent.length}}个班\n</text>
         <text class="classList" selectable="false" space="false" decode="true">
-            <block wx:for="{{classCurrent}}">{{item}},&ensp;&ensp;</block>
+            <block wx:for="{{classCurrent}}" wx:key="">{{item}},&ensp;&ensp;</block>
         </text>
     </block>
     <button class="submit_button" form-type="submit">发送</button>

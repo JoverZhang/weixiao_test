@@ -1,0 +1,32 @@
+/* pages/myInfo/chat/chatWindow.wxss */
+
+.submitContent{
+    position: absolute;
+    width: 100vw;
+    height: 10vw;
+    float: left;
+    bottom: 0;
+    background-color: grey;
+}
+
+.submitContent .content{
+    position: relative;
+    float: left;
+    margin: 1.5vw 0 1.5vw 2vw;
+    width: 80vw;
+    height: 7vw;
+    background-color: red;
+}
+
+.submitContent .submit{
+    position: relative;
+    float: right;
+    margin: 1.5vw 2vw 1.5vw 0;
+    width: 15vw;
+    height: 7vw;
+    font-size: 3.6vw;
+    line-height: 7vw;
+    border-radius: 10rpx;
+    color: white;
+    background-color: blue;
+}

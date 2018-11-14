@@ -1,13 +1,70 @@
 <!-- pages/index/workDetail.wxml -->
 <view class="workDetail" hover-class="none" hover-stop-propagation="false">
-    <view class="subjectName" hover-class="none" hover-stop-propagation="false">{{workSummary.ClassName}}</view>
+    <view class="subjectName" hover-class="none" hover-stop-propagation="false">
+        {{workSummary.ClassName}}
+    </view>
     <view class="workContent" hover-class="none" hover-stop-propagation="false">
         <text>{{workSummary.content}}</text>
     </view>
     <view class="picture" hover-class="none" hover-stop-propagation="false">
-        <block wx:for="1111" wx:for-item="this" wx:key="">
-            <image class="pictureItem" src="{{this}}" mode="aspectFill" data-src="{{this}}" bindtap="PreviewImage"></image>
+        <block wx:for="{{workPictrueList[workSummary.workId]}}" wx:for-item="pictureList" wx:key="">
+            <image class="pictureItem" src="{{workPictrueList[workSummary.workId][index]}}" mode="aspectFill" data-src="{{workPictrueList[workSummary.workId][index]}}" bindtap="PreviewImage"></image>
         </block>
     </view>
     <view class="time" hover-class="none" hover-stop-propagation="false">{{workSummary.time}}</view>
 </view>
+<block wx:if="{{!isTeacher}}">
+    <form class="rate" bindsubmit="submitRate">
+        <text>提交评价</text>
+        <view class="starRate">
+            <i-cell title="提交评价">
+                <i-rate size="40" bind:change="onChange" value="{{starIndex}}"></i-rate>
+            </i-cell>
+        </view>
+        <block wx:if="{{!workSummary['submited']}}">
+            <button class="submit_button" form-type="submit">提交评价</button>
+        </block>
+        <block wx:else>
+            <button class="submit_button submit_buttonActice" form-type="submit">已提交</button>
+        </block>
+    </form>
+</block>
+<block wx:else>
+    <form class="rate">
+        <text>作业评价</text>
+        <view class="starRate">
+            <i-cell title="作业评价">
+                <i-rate disabled size="40" bind:change="onChange" value="{{starIndex}}"></i-rate>
+            </i-cell>
+        </view>
+        <view class="studentList" style="height:400rpx;">
+            <view class="studentNavigation">
+                <view class="submitted">
+                    <text>已交</text>
+                    <text class="count">10</text>
+                    <text>/50</text>
+                </view>
+                <view class="call">一键催交</view>
+                <view class="selectSubmitted {{onScreen == true?'selected':''}}" bindtap="screenStudents">
+                    已提交
+                </view>
+            </view>
+            <block wx:if="{{onScreen == false}}">
+                <block wx:for="{{studentList}}" wx:key="">
+                    <view class="studentItem">
+                        <view class="name">{{item[0]}}</view>
+                        <view class="judgement {{item[1] == true?'judgementActive':''}}">{{item[1] == true?'已提交':'未提交'}}</view>
+                    </view>
+                </block>
+            </block>
+            <block wx:else>
+                <block wx:for="{{studentListActive}}" wx:key="">
+                    <view class="studentItem">
+                        <view class="name">{{item[0]}}</view>
+                        <view class="judgement judgementActive">{{item[1] == true?'已提交':'未提交'}}</view>
+                    </view>
+                </block>
+            </block>
+        </view>
+    </form>
+</block>

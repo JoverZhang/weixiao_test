@@ -8,7 +8,9 @@
     "pages/assignments/messages",
     "pages/assignments/notices",
     "pages/myInfo/myInfo",
-    "pages/myInfo/myName"
+    "pages/myInfo/myName",
+    "pages/myInfo/chat/chatList",
+    "pages/myInfo/chat/chatWindow"
   ],
   "window": {
     "backgroundColor": "#303030",
