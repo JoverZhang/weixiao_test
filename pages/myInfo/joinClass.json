@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "申请加入班级",
+    "usingComponents": {
+        "i-message": "../../components/iview/dist/message/index",
+        "i-toast": "../../components/iview/dist/toast/index"
+    }
+}

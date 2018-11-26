@@ -34,12 +34,20 @@ App({
       'messageId': 1,
       'teacherName': '欧阳',
       'content': '就测试留言随便发发，其实也没什么特别重要的东西西西西。',
-      'time': '00:00'
+      'time': '00:00',
+      'comment': [{
+        'name': '周家长',
+        'content': '老师你好，我是周家长，我就测试一下这里有没有bug而已，没什么特别的意思。'
+      }, {
+        'name': '何家长',
+        'content': '我也是。'
+      }]
     }, {
       'messageId': 2,
       'teacherName': '陈',
       'content': '就测试留言随便发发，依然还是没什么特别重要的东西西西西。',
-      'time': '00:01'
+      'time': '00:01',
+      'comment': []
     }],
     noticeSummaryList: [{
       'noticeId': 1,
@@ -163,7 +171,7 @@ App({
   onLaunch: function () {
     var that = this;
     var https = that.globalData.httpsUrl;
-    
+
     wx.getSetting({
       success(res) {
         if (res.authSetting['scope.userInfo']) {
@@ -172,7 +180,7 @@ App({
             success(e) {
               // 获取用户微信姓名
               lang: 'zh_CN',
-              that.globalData.name = e.userInfo.nickname;
+                that.globalData.name = e.userInfo.nickname;
               var name = that.globalData.name;
               wx.login({
                 // 获取用户的code发送给后台

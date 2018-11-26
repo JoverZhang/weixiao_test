@@ -1,32 +1,143 @@
 /* pages/myInfo/chat/chatWindow.wxss */
 
-.submitContent{
-    position: absolute;
+.panel{
     width: 100vw;
-    height: 10vw;
+    height: calc(100vh - 11vw - 3rpx);
+    background-color: rgb(235, 235, 235);
+}
+
+
+.submitContent{
+    position: fixed;
+    width: 100vw;
+    height: 11vw;
     float: left;
     bottom: 0;
-    background-color: grey;
+    border-top: 3rpx solid rgb(208, 208, 208);
+    background-color: rgb(243, 243, 243);
 }
 
 .submitContent .content{
     position: relative;
     float: left;
-    margin: 1.5vw 0 1.5vw 2vw;
-    width: 80vw;
+    margin: 1.5vw 0 2.5vw 3vw;
+    padding-left: 2vw;
+    width: 76vw;
     height: 7vw;
-    background-color: red;
+    font-size: 3.6vw;
+    border-bottom: 2rpx solid rgb(225, 225, 225);
+    /* background-color: red; */
 }
 
 .submitContent .submit{
     position: relative;
     float: right;
-    margin: 1.5vw 2vw 1.5vw 0;
+    margin: 1.5vw 3vw 2.5vw 0;
     width: 15vw;
     height: 7vw;
     font-size: 3.6vw;
     line-height: 7vw;
     border-radius: 10rpx;
     color: white;
-    background-color: blue;
+    background-color: #529eea;
 }
+
+.panel .item{
+    float: left;
+    height: auto;
+    width: 100vw;
+}
+
+.panel .time{
+    position: relative;
+    float: left;
+    margin: 0 auto;
+    margin-bottom: 1vw;
+    top: 3vw;
+    height: 8vw;
+    width: 100vw;
+    text-align: center;
+    display: block;
+}
+
+.panel .timeBefore{
+    content: '00:00';
+    display: inline;
+    font-size: 2.8vw;
+    line-height: 2.8vw;
+    padding: 0.5vw 1.8vw;
+    border-radius: 7rpx;
+    background-color: rgba(151, 151, 151, 0.301);
+    color: white;
+}
+
+.panel .bubble{
+    position: relative;
+    margin: 0vw 8vw 3vw 4vw;
+    padding: 2vw 3vw 2vw 3vw;
+    bottom: -3vw;
+    width: auto;
+    /* height: 10vw; */
+    background-color: white;
+    border-bottom-color:white;/*为了给after伪元素自动继承*/
+    font-size: 3.6vw;
+    color: black;
+    line-height: 7.2vw;
+    /* font-family: Arial; */
+    border-radius: 12rpx;
+    word-wrap:break-word;
+    word-break: break-all;
+    box-sizing: border-box;
+    display: inline-block
+}
+
+
+.panel .bubble::before{
+    content: '';
+    width: 2.5vw; 
+    height: 2.5vw;
+    background-color: inherit;
+    left: -1vw; /*向左侧外部延伸箭头box的一半宽度*/
+    position: absolute;
+    transform: rotate(45deg); /*旋转45度*/
+    top:50%; /*箭头在数值方向上居中*/
+    margin-top: -5px;
+}
+
+.panel .ownBubble{
+    position: relative;
+    float: right;
+    margin: 0vw 4vw 3vw 8vw;
+    padding: 2vw 3vw 2vw 3vw;
+    bottom: -3vw;
+    width: auto;
+    /* height: 10vw; */
+    background-color: rgb(160, 232, 89);
+    border-bottom-color:rgb(160, 232, 89);
+    /* background-color: #529eea;
+    border-bottom-color:#529eea; */
+    font-size: 3.6vw;
+    color: black;
+    line-height: 7.2vw;
+    /* font-family: Arial; */
+    border-radius: 12rpx;
+    word-wrap:break-word;
+    word-break: break-all;
+    box-sizing: border-box;
+    display: inline-block
+}
+
+
+.panel .ownBubble::before{
+    position: absolute;
+    /* float: right; */
+    content: '';
+    width: 2.5vw; 
+    height: 2.5vw;
+    background-color: inherit;
+    right: -1vw;
+    transform: rotate(45deg); /*旋转45度*/
+    top:50%; /*箭头在数值方向上居中*/
+    margin-top: -5px;
+}
+

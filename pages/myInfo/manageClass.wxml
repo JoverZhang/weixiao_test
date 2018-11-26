@@ -1,0 +1,19 @@
+<!-- pages/myInfo/manageClass.wxml -->
+<scroll-view class="panel" scroll-y="true" scroll-with-animation="" enable-back-to-top="true">
+    <view class="createClass" bindtap="to_createClass">创建班级</view>
+    <block wx:for="{{appliedList}}" wx:key="" wx:for-item="appliedList">
+        <view class="class">
+            <view class="title">{{appliedList.groupName}}</view>
+            <block wx:for="{{appliedList.list}}" wx:key="" wx:for-item="appliedListList">
+                <view class="item {{index==0?'':'itemBorder'}}">
+                    <view class="name">{{appliedListList.name}}</view>
+                    <view class="button refuse" data-class="{{appliedList.id}}" data-parent="{{appliedListList.id}}" bindtap="refuse">拒绝</view>
+                    <view class="button agree" data-class="{{appliedList.id}}" data-parent="{{appliedListList.id}}" bindtap="agree">同意</view>
+                </view>
+            </block>
+            <block wx:if="{{!appliedList.list.length}}">
+                <view class="empty">暂未有申请信息</view>
+            </block>
+        </view>
+    </block>
+</scroll-view>

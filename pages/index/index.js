@@ -7,6 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //global
+    isTeacher: app.globalData.isTeacher,
     username: app.globalData.username,
     //window
     imageWidth: 0,
@@ -15,15 +17,15 @@ Page({
     autoplay: false,
     interval: 5000,
     duration: 300,
-    swiperCurrent: 2,//home子页号
+    swiperCurrent: 1,//home子页号
     //message
     closeMessageComment: '',
     showMessageComment: -1,
     //footer
     // current: 'homepage',
-    current: 'mine',
+    current: 'homepage',
     //首页
-    _this: 2,//home导航号
+    _this: 1,//home导航号
     _plane_miss: 1,
     //我的
     visible: false,
@@ -66,7 +68,7 @@ Page({
       showMessageComment: num,
       closeMessageComment: 'closeComment'
     })
-    console.log(self.data.showMessageComment)
+    // console.log(self.data.showMessageComment)
   },
 
   closeComment() {
@@ -75,12 +77,20 @@ Page({
       showMessageComment: -1,
       closeMessageComment: ''
     })
-    console.log(self.data.showMessageComment)
+    // console.log(self.data.showMessageComment)
   },
 
   messageCommentSubmit(e) {
-    var self = this
-
+    let self = this
+    let submitId = e.target.dataset.num
+    let content = e.detail.value.content
+    if (!content){
+      console.log('empty')
+      self.closeComment()
+      return
+    }
+    console.log(submitId)
+    console.log(content)
     //结束
     self.closeComment()
   },
@@ -128,10 +138,6 @@ Page({
     this.setData({
       visible: false
     });
-  },
-
-  joinClass: function () {
-    console.log('joinClass')
   },
 
   //footer
@@ -202,6 +208,26 @@ Page({
       url: "../myInfo/chat/chatList?current=" + JSON.stringify(e.target.dataset.num)
     })
   },
+
+  //MyInfor
+  to_createClass: function (e) {
+    wx.navigateTo({
+      url: "../myInfo/manageClass"
+    });
+  },
+
+  to_joinClass: function () {
+    wx.navigateTo({
+      url: "../myInfo/joinClass"
+    });
+  },
+
+  to_aboutUs: function(e){
+    wx.navigateTo({
+      url: "../myInfo/aboutUs"
+    });
+  },
+
 
   plane(e) {
     var self = this

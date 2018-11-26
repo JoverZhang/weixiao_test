@@ -1,0 +1,28 @@
+<!--pages/myInfo/joinClass.wxml-->
+<i-toast id="pop_toast" type="ghost" bind:click="handleSuccess">成功</i-toast>
+<i-message id="pop_message" type="ghost" bind:click="handleError">错误提醒</i-message>
+<form class="search" bindsubmit="formSubmit">
+    <input class="input" value="{{value1}}" name="groupname" focus placeholder="班级名称" type="text" />
+    <button class="submit_buttom" form-type="submit">搜索</button>
+</form>
+<block wx:if="{{searched == true}}">
+    <block wx:if="{{searchSuccess == true}}">
+        <view class="detailPanel">
+            <view class="classStyle">班级名称：{{classDetail.name}}</view>
+            <view class="classStyle">班主任：{{classDetail.master}}</view>
+            <view class="classStyle">已加入人数：{{classDetail.count}}</view>
+            <view class="join {{classDetail.joined == true?'joined':''}}" bindtap="join">申请加入</view>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="searchFalse">该班级尚不存在</view>
+    </block>
+</block>
+<view class="applied">
+    <block wx:for="{{applied}}" wx:key="">
+        <view class="item">
+            <view class="itemName">{{item}}</view>
+            <view class="itemState">待审核</view>
+        </view>
+    </block>
+</view>

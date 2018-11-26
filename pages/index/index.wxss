@@ -138,23 +138,35 @@ swiper{
   height: calc(100vh - 156rpx);
   width: 100vw;
 }
+
 .home .message_tipwindow .messageItem{
+  position: relative;
+  float: left;
+  top: 1rpx;
   width: 100vw;
   height: auto;
-  border-bottom: 1rpx solid #f5f5f5; 
   /* background-color: red; */
 }
 
+.home .message_tipwindow .messageItemBorder{
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
 .home .message_tipwindow .messageItem .senderName{
-  margin: 4vw 3vw;
+  position: relative;
+  top: 4vw;
+  margin: 0 3vw;
   width: 94vw;
   font-size: 4vw;
   font-weight: bold;
 }
 
 .home .message_tipwindow .messageItem .content{
+  position: relative;
   margin: 4vw 3vw;
+  margin-top: 8vw;
   width: 94vw;
+  height: auto;
   font-size: 3.9vw;
 }
 
@@ -174,42 +186,72 @@ swiper{
   bottom: 3vw;
 }
 
-.home .message_tipwindow .messageSubmit{
+
+
+.home .message_tipwindow .commentContent{
   position: relative;
   float: left;
-
+  height: auto;
   width: 100vw;
-  height: 4vw;
-  padding: 4vw;
-  /* bottom: 300rpx; */
-  border-top: 2px solid #ebebeb;
-  background-color: #edf1f4;
+  padding: 2vw 3vw;
+  padding-top: 0vw;
+  /* background-color: rgb(208, 208, 208); */
+  background-color: #f5f5f5;
+  font-size: 3.9vw;
+}
+
+.home .message_tipwindow .commentContent .userName{
+  position: relative;
+  width: 94vw;
+  height: auto;
+  margin-top: 2vw;
+  font-weight: 600;
+}
+
+.home .message_tipwindow .commentContent .content{
+  position: relative;
+  width: 94vw;
+  height: auto;
+  display: block;
+}
+
+.home .message_tipwindow .submitContent{
+  position: relative;
+  width: 100vw;
+  height: 11vw;
+  float: left;
+  top: 0rpx;
+  border-bottom: 1rpx solid rgb(208, 208, 208);
+  background-color: white;
+}
+
+.home .message_tipwindow .submitContent .content{
+  position: relative;
+  float: left;
+  margin: 1.5vw 0 2.5vw 3vw;
+  padding-left: 2vw;
+  width: 76vw;
+  height: 7vw;
+  font-size: 3.6vw;
+  border-bottom: 2rpx solid rgb(225, 225, 225);
   /* background-color: red; */
 }
 
-.home .message_tipwindow .messageSubmit .comment{
+.home .message_tipwindow .submitContent .submit{
   position: relative;
-  float: left;
-  top: 0rpx;
-  bottom: 4vw;
-  height: 6vw;
-  width: 72vw;
-  font-size: 4vw;
-  border-bottom: 1px solid #529eea;
+  float: right;
+  margin: 1.5vw 3vw 2.5vw 0;
+  width: 15vw;
+  height: 7vw;
+  font-size: 3.6vw;
+  line-height: 7vw;
+  border-radius: 10rpx;
+  color: white;
+  background-color: #529eea;
 }
 
-.home .message_tipwindow .messageSubmit .submit{
-  position: relative;
-  float: left;
-  top: -2vw;
-  background-color: #529eea;
-  font-size: 4vw;
-  line-height: 8vw;
-  margin: 0vw 1vw;
-  height: 8vw;
-  border: none;
-  width: 18vw;
-}
+
+
 
 /* 通知receive */
 .home .notice_tipwindow{
@@ -274,12 +316,13 @@ swiper{
 
 .home .tcontent .nre_tipwindow .nre_tips .nre_tips_info .nre_tips_time{
   position: relative;
-  left: 140rpx;
-  float: left;
+  right: 20rpx;
+  float: right;
   height: 40rpx;
-  width: 100rpx;
+  width: 200rpx;
   color: #d9d9db;
-  font-size: 24rpx;
+  font-size: 22rpx;
+  text-align: right;
   /* line-height: 90rpx; */
   /* background-color: red; */
   display: block;

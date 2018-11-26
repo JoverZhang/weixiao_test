@@ -1,0 +1,89 @@
+/* pages/myInfo/manageClass.wxss */
+.panel{
+    width: 100vw;
+    height: 100vh;
+}
+
+.panel .createClass{
+    width: 100vw;
+    height: 10vw;
+    background-color: #529eea;
+    text-align: center;
+    line-height: 10vw;
+    font-size: 4vw;
+}
+
+.panel .createClass:active{
+    background-color: rgb(208, 208, 208);
+}
+
+.panel .class{
+    position: relative;
+    top: 5vw;
+    width: 100vw;
+    height: auto;
+    display: block;
+    font-size: 3.6vw;
+}
+
+.panel .class .title{
+    position: relative;
+    padding-left: 2vw;
+    width: 100vw;
+    height: 5vw;
+    font-size: 3vw;
+    line-height: 5vw;
+    background-color: rgb(208, 208, 208);
+}
+
+.panel .class .item{
+    position: relative;
+    width: 100vw;
+    height: 10vw;
+}
+
+.panel .class .itemBorder{
+    border-top: 1rpx solid #f5f5f5;    
+}
+
+.panel .class .item .name{
+    position: relative;
+    float: left;
+    padding-left: 2vw;
+    width: 40vw;
+    height: 10vw;
+    line-height: 10vw;
+}
+
+.panel .class .item .button{
+    position: relative;
+    float: right;
+    width: 16vw;
+    height: 7vw;
+    margin: 1.5vw 2vw;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    line-height: 7vw;
+    color: white;
+}
+
+.panel .class .item .button:active{
+    background-color: rgb(208, 208, 208);
+    color: black;
+}
+
+.panel .class .item .agree{
+    background-color: #529eea;
+}
+
+.panel .class .item .refuse{
+    background-color: red;
+}
+
+.panel .class .empty{
+    padding-left: 2vw;
+    height: 6vw;
+    width: 100vw;
+    line-height: 6vw;
+}

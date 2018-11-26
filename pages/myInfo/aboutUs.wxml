@@ -1,0 +1,6 @@
+<!--pages/myInfo/aboutUs.wxml-->
+<view class="panel">
+    <image class="logo" src="../../images/myapp/m-home1.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+    <view class="versionNum">微校 1.0.0</view>
+    <text class="us">XX Team 版权所有\nCopyright Terry and Jover.</text>
+</view>

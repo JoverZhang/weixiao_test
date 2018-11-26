@@ -1,0 +1,127 @@
+/* pages/myInfo/joinClass.wxss */
+.search{
+    position: relative;
+    margin-top: 2vw;
+    height: 10vw;
+    width: 100vw;
+    font-size: 3.6vw;
+    /* background-color: red; */
+    display: block
+}
+.search .input{
+    position: relative;
+    margin-left: 2vw;
+    padding-left: 3vw;
+    border-bottom: 2px solid #f5f5f5;
+    float: left;
+    height: 10vw;
+    width: 73vw;
+    font-size: 3.6vw;
+    display: block;
+}
+
+.search .submit_buttom{
+    position: relative;
+    float: right;
+    margin-right: 2vw;
+    width: 18vw;
+    height: 10vw;
+    line-height: 10vw;
+    font-size: 3.6vw;
+    border-radius: 0;
+    background-color: #529eea;
+}
+
+.searchFalse{
+    position: relative;
+    float: left;
+    top: 5vw;
+    width: 100vw;
+    height: 10vw;
+    color: rgb(208, 208, 208);
+    font-size: 3.6vw;
+    text-align: center;
+}
+
+.detailPanel{
+    position: relative;
+    float: left;
+    top: 5vw;
+    width: 100vw;
+    height: 45vw;
+    border-top: 1px solid rgb(208, 208, 208);
+    font-size: 4vw;
+    text-align: left;
+}
+
+.detailPanel .classStyle{
+    position: relative;
+    float: left;
+    top: 1vw;
+    margin: 1vw 5vw;
+    width: 100vw;
+    height: 4vw;
+}
+
+.detailPanel .join{
+    position: relative;
+    float: left;
+    width: 100vw;
+    height: 10vw;
+    top: 10vw;
+    background-color: #529eea;
+    display: block;
+    text-align: center;
+    line-height: 10vw;
+}
+
+.detailPanel .join:active{
+    color: rgb(208, 208, 208);
+}
+
+.detailPanel .joined{
+    background-color: #f5f5f5;
+    color: rgb(208, 208, 208);
+}
+
+.detailPanel .joined:active{
+    color: rgb(208, 208, 208);
+}
+
+.applied{
+    position: relative;
+    float: left;
+    height: auto;
+    width: 100vw;
+}
+
+.applied .item{
+    position: relative;
+    float: left;
+    height: 10vw;
+    width: 100vw;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.applied .item .itemName{
+    position: relative;
+    float: left;
+    padding-left: 3vw;
+    height: 10vw;
+    width: 67vw;
+    font-size: 3.6vw;
+    line-height: 10vw;
+    color: grey;
+}
+
+.applied .item .itemState{
+    position: relative;
+    float: right;
+    padding-right: 3vw;
+    height: 10vw;
+    width: 27vw;
+    text-align: right;
+    font-size: 3.6vw;
+    line-height: 10vw;
+    color: grey;
+}

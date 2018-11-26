@@ -2,6 +2,7 @@
   "cloud": true,
   "pages": [
     "pages/index/index",
+    "pages/myInfo/chat/chatWindow",
     "pages/index/workDetail",
     "pages/index/noticeDetail",
     "pages/assignments/assignments",
@@ -10,7 +11,10 @@
     "pages/myInfo/myInfo",
     "pages/myInfo/myName",
     "pages/myInfo/chat/chatList",
-    "pages/myInfo/chat/chatWindow"
+    "pages/myInfo/manageClass",
+    "pages/myInfo/createClass",
+    "pages/myInfo/joinClass",
+    "pages/myInfo/aboutUs"
   ],
   "window": {
     "backgroundColor": "#303030",

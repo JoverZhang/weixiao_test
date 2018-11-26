@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "创建班级信息",
+    "usingComponents": {
+        "i-input": "../../components/iview/dist/input/index",
+        "i-message": "../../components/iview/dist/message/index",
+        "i-toast": "../../components/iview/dist/toast/index"
+    }
+}

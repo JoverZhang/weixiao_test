@@ -1,0 +1,10 @@
+<!-- pages/myInfo/createClass.wxml -->
+<i-toast id="pop_toast" type="ghost" bind:click="handleSuccess">成功</i-toast>
+<i-message id="pop_message" type="ghost" bind:click="handleError">错误提醒</i-message>
+<form class="information" bindsubmit="formSubmit">
+    <view class="item">
+        <view class="text1">班级名称</view>
+        <input class="input1" value="{{value1}}" name="groupname" focus placeholder="名称" type="text"/>
+    </view>
+    <button class="submit_button" form-type="submit">创建班级</button>
+</form>

@@ -1,0 +1,36 @@
+/* pages/myInfo/createClass.wxss */
+.information{
+    height: 100vh;
+    width: 100vw;
+}
+
+.information .item{
+    height: 10vw;
+    width: 100vw;
+    font-size: 3.6vw;
+}
+
+.information .item .text1{
+    float: left;
+    height: 10vw;
+    width: 24vw;
+    line-height: 10vw;
+    text-align: center;
+}
+
+.information .item .input1{
+    float: left;
+    height: 10vw;
+    width: 76vw;
+}
+
+.information .submit_button{
+    position: relative;
+    width: 100vw;
+    height: 10vw;
+    font-size: 4vw;
+    line-height: 10vw;
+    top: 5vw;
+    border-radius: 0;
+    background-color: #529eea;
+}
